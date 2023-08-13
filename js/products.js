@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
   const listaCars = document.getElementsByClassName("lista-cars")[0];
-  // Realizar una solicitud fetch
   fetch("https://japceibal.github.io/emercado-api/cats_products/101.json")
     .then((response) => response.json())
     .then((data) => {
