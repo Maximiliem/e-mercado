@@ -188,3 +188,16 @@ a.custom-card:hover {
 .checked {
   color: orange;
 }
+
+.imagenCars {
+  width: 10%;
+}
+
+.containerCars {
+  display: flex;
+  flex-direction: column;
+}
+
+.containerCars h4 {
+  text-align: center;
+}
