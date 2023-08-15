@@ -13,36 +13,36 @@
 
 <body>
   <main class="mt-5">
-    <div class="row mt-4">
+    <div class="form-popup" id="myPopup"> <!--edito clase y id para posterior css-->
       <div class="col">
-        <h1 class="mb-3">Registro</h1>
+        <h1 class="mb-3">Registro</h1> <!--cambio encabezado-->
         <hr class="my-4">
 
-        <form action="" id="formulario">
+        <form action="" class="form-container" id="formulario"> <!--agrego clase para css-->
         <div class="row g-3">
           <div class="col-sm-6">
             <label for="nombre" class="form-label">Nombre</label>
-            <input type="text" class="form-control" id="nombre">
+            <input type="text" placeholder="Escriba primer nombre" class="form-control" id="nombre" required>
           </div>
 
           <div class="col-sm-6">
             <label for="apellido" class="form-label">Apellido</label>
-            <input type="text" class="form-control" id="apellido">
+            <input type="text" placeholder="Escriba primer apellido" class="form-control" id="apellido" required>
           </div>
 
           <div class="col-12">
             <label for="email" class="form-label">Email</label>
-            <input type="email" class="form-control" id="email">
+            <input type="email" placeholder="Escriba mail válido" class="form-control" id="email" required>
           </div>
 
           <div class="col-sm-6">
             <label for="password1" class="form-label">Contraseña</label>
-            <input type="text" class="form-control" id="password1">
+            <input type="password" placeholder="Escriba su contraseña" class="form-control" id="password1" required>
           </div>
 
           <div class="col-sm-6">
             <label for="password2" class="form-label">Repetir contraseña</label>
-            <input type="text" class="form-control" id="password2">
+            <input type="password" placeholder="Repita su contraseña" class="form-control" id="password2" required>
           </div>
 
           <div class="form-check">
