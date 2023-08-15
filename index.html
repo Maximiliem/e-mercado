@@ -12,28 +12,67 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1">
+  <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark p-1"> <!--se deja nav fijo-->
     <div class="container">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav w-100 justify-content-between">
-          <li class="nav-item">
-            <a class="nav-link active" href="index.html">Inicio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="categories.html">Categorías</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="sell.html">Vender</a>
-          </li>
-          <li class="nav-item">
-          </li>
-        </ul>
+          <button class="navbar-toggler" 
+                  type="button" 
+                  data-bs-toggle="collapse" 
+                  data-bs-target="#navbarNav" 
+                  aria-controls="navbarNav"  
+                  aria-expanded="false" 
+                  aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav w-100 justify-content-between">
+                <li class="nav-item">
+                  <a class="nav-link active" href="index.html">Inicio</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="categories.html">Categorías</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="sell.html">Vender</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="login.html" onclick="openForm()">Crear cuenta</a>
+                </li>
+                    
+              </ul>
+          </div>
       </div>
-    </div>
+      <label class="login-button" id="login-clic-button" onclick="window.open('loginPopup.html')">Login2<span type="checkbox" for="show" name="show" id="show"></label>
+      <input type="checkbox" for="show" name="show" id="show">
+            <!-- BLOQUE CODIGO POP UP LOG IN ///////////////////////////////////<<<<<<<<<<<<<<<<<
+              <div class="center">
+              <input type="checkbox" name="show" id="show">
+              <label for="show" class="show-btn">LOG IN/SIGN UP</label> -->
+              <div class="container-popup">
+                <label for="show" class="close-btn fas fa-times" title="colse">X</label>
+                <div class="text">Inicia sesión</div>
+                <form action="#">
+                  <div class="data">
+                    <label>Email</label>
+                    <input type="text" placeholder="Escriba aqui su email" required>
+                  </div>
+                  <div class="data">
+                    <label>Contraseña</label>
+                    <input type="password" placeholder="Escriba aqui su contraseña" required>
+                  </div>
+                  <div class="forgot-pass">
+                    <a href="#">Olvidé mi contraseña</a>
+                  </div>
+                  <div class="btn">
+                    <div class="inner">
+                        <button type="submit">LOGIN</button>
+                    </div>
+                  </div>
+                  <div class="signup-link">
+                    sin usuario? <a href="login.html" target="_blank">Crea tu cuenta</a>
+                  </div>
+               </form>
+              </div>
+            </div>
   </nav>
   <main>
     <div class="jumbotron text-center"></div>
@@ -88,6 +127,10 @@
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/index.js"></script>
   <script src="js/init.js"></script>
+  <script src="js/login.js"></script>
+  <script src="js/trylogin.js"></script>
+ 
+
 </body>
 
 </html>

@@ -23,12 +23,10 @@ function showAlertSuccess() {
    poniéndole el evento submit al formulario */
    
    const formula = document.getElementById('formulario');
-   /*const para = document.querySelector("alert-danger");
-   
+   /*const para = document.querySelector("alert-danger");   
    Esta constante también está comentada porque no hago uso de la misma*/
    
-   formula.addEventListener("submit", (event) => {
-   
+   formula.addEventListener("submit", (event) => {  
    
    event.preventDefault();
    
@@ -75,3 +73,11 @@ function showAlertSuccess() {
    Secur3P@ss
    
    */
+
+   function togglePopup() {
+
+    document.getElementById("login-button")
+   
+     .classList.toggle("active");
+   
+ } 
