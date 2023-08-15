@@ -195,6 +195,10 @@ a.custom-card:hover {
   margin-right: 4%;
 }
 
+.imagenCars:hover {
+
+}
+
 .containerCars {
   display: flex;
   flex-direction: column;
@@ -211,12 +215,15 @@ a.custom-card:hover {
 
 .subtitulo4 {
   margin-top: 2%;
+  margin-bottom: 2%;
+  letter-spacing:0.75vw;
+  font-size: 220%;
 }
 
 .subtitulo5 {
   text-align: center;
   color: rgb(58, 58, 58);
-  margin-bottom: 5%;
+  margin-bottom: 1%;
 }
 
 /* esto es la clase de la etiqueta span para la palabra Autos */
@@ -226,13 +233,11 @@ a.custom-card:hover {
 
 .divNombre{
   font-size:3.3vh;
-  letter-spacing:1vw;
+  letter-spacing:0.75vw;
+  color: rgb(20, 20, 20);
+  font-weight: 510;
 }
 
-/* .divNombre, .divDescripcion, .divPrecio, .divVendidos {
-  clear: both;
-  float: right;
-} */
 
 .divTexto {
   display: inline-flexbox;
