@@ -243,3 +243,9 @@ a.custom-card:hover {
   display: inline-flexbox;
   text-align: right;
 }
+
+.producto:hover {
+  transform: scale(1.1);
+  animation-duration: 1ms;
+  transition: 0.4s;
+}
