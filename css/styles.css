@@ -195,10 +195,6 @@ a.custom-card:hover {
   margin-right: 4%;
 }
 
-.imagenCars:hover {
-
-}
-
 .containerCars {
   display: flex;
   flex-direction: column;
@@ -242,6 +238,7 @@ a.custom-card:hover {
 .divTexto {
   display: inline-flexbox;
   text-align: right;
+  font-size:2.4vh;
 }
 
 .producto:hover {
@@ -250,3 +247,5 @@ a.custom-card:hover {
   transition: 0.4s;
   background-color: rgba(231, 231, 231, 0.534);
 }
+
+
