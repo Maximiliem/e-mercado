@@ -248,4 +248,5 @@ a.custom-card:hover {
   transform: scale(1.1);
   animation-duration: 1ms;
   transition: 0.4s;
+  background-color: rgba(231, 231, 231, 0.534);
 }
