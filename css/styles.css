@@ -229,7 +229,7 @@ a.custom-card:hover {
 
 .divNombre{
   font-size:3.3vh;
-  /* letter-spacing:0.75vw; */
+  /* letter-spacing:0.5vw; */ /*la variante que se me ocurre es disminuir el espacio, para darle un toque diferente a la letra*/
   color: rgb(20, 20, 20);
   font-weight: 510;
 }
@@ -248,9 +248,16 @@ a.custom-card:hover {
   background-color: rgba(231, 231, 231, 0.534);
 }
 
+/* PARA MI QUEDA ESPANTOSO ESTO 
+  .divTexto:hover .divNombre{
+  letter-spacing: 0.75vw;
+  animation-duration: 1ms;
+  transition: 0.4s;
+} */
 
 /* agregar al hover el letter-spacing a los títulos de divNombre
   ver el tema de estilos a hijos
 */
+
 
 
