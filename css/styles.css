@@ -248,10 +248,10 @@ a.custom-card:hover {
   background-color: rgba(231, 231, 231, 0.534);
 }
 
-/* PARA MI QUEDA ESPANTOSO ESTO 
-  .divTexto:hover .divNombre{
-  letter-spacing: 0.75vw;
-  animation-duration: 1ms;
+/* PARA MI QUEDA ESPANTOSO ESTO  */
+  /* .producto:hover .divNombre {
+  letter-spacing: 0.4vw;
+  animation-duration: 0.1ms;
   transition: 0.4s;
 } */
 
