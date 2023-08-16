@@ -229,7 +229,7 @@ a.custom-card:hover {
 
 .divNombre{
   font-size:3.3vh;
-  letter-spacing:0.75vw;
+  /* letter-spacing:0.75vw; */
   color: rgb(20, 20, 20);
   font-weight: 510;
 }
@@ -247,5 +247,10 @@ a.custom-card:hover {
   transition: 0.4s;
   background-color: rgba(231, 231, 231, 0.534);
 }
+
+
+/* agregar al hover el letter-spacing a los títulos de divNombre
+  ver el tema de estilos a hijos
+*/
 
 
