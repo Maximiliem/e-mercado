@@ -400,3 +400,68 @@ a.custom-card:hover {
 .checked {
   color: orange;
 }
+
+/*FC: estos son los estilos del mensaje de validación*/
+
+.container {
+  max-width: 960px;
+}
+
+.alert {
+  position: fixed;
+  top: 80px;
+  width: 50%;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+#mensaje {
+  display:none;
+  background: #ffffff;
+  color: #000;
+  position: relative;
+  padding: 20px;
+  width: 380px;
+  height: auto;
+  box-sizing: border-box;
+  border: 2px solid rgb(251, 163, 0);
+}
+
+#mensaje h3 {
+  padding-right: 35px;
+  padding-left: 35px;
+  font-size: 15px;
+  font-family: 'Verdana', serif;
+  font-weight: 700;
+}
+#mensaje p {
+ padding: 0 35px;
+  font-size: 12px;
+  font-family: 'Verdana', serif;
+
+}
+
+/*Esto le agrega color verde al texto y un tick cuando
+las condiciones de la contraseña son correctas*/
+p.valid {
+  color: rgb(18, 201, 43);
+}
+
+.valid:before {
+  position: relative;
+  left: -10px;
+  content: "✔";
+}
+
+/*Esto le agrega color rojo al texto y una cruz cuando la
+contraseña no cumple una condición */
+
+p.invalid {
+  color: rgb(221, 52, 22);
+}
+
+.invalid:before {
+  position: relative;
+  left: -10px;
+  content: "❌";
+}

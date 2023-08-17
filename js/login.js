@@ -58,21 +58,9 @@ function showAlertSuccess() {
    
     });
    
-   /*Ejemplo de algunas contraseñas que cumplen con los requisitos:
+   /*Ejemplos de algunas contraseñas que cumplen con los requisitos:
    
-   A123456.or%
-   
-   P123@.wo
-   
-   Abc123$
-   
-   Pa$$w0rd
-   
-   MyP@ss123
-   
-   Secur3P@ss
-   
-   */
+   A123456.or% P123@.wo Abc123$ Pa$$w0rd MyP@ss123 Secur3P@ss*/
 
    function togglePopup() {
 
@@ -81,3 +69,105 @@ function showAlertSuccess() {
      .classList.toggle("active");
    
  } 
+ 
+/*FC:  Aquí voy a trabajar lo que es la validación de la contraseña*/
+
+const length = document.getElementById('length');
+const special = document.getElementById('special');
+const number = document.getElementById('number');
+const mayus = document.getElementById('mayus');
+const minus = document.getElementById('minus');
+
+  password1.addEventListener('input', function(){
+
+/*Estas funciones sirven para mostrar el mensaje de 
+validación cuando el usuario hace focus y cuando deja de hacerle 
+focus al input*/
+ password1.onblur = function myBlur() {
+document.getElementById("mensaje").style.display = "none"; }
+
+password1.onfocus = function myFocus() {
+ document.getElementById("mensaje").style.display = "block";}
+
+/*Condición del largo*/
+  if (password1.value.length >= 6){
+  
+  length.classList.remove('invalid');
+  length.classList.add('valid');
+
+  }else{
+  length.classList.remove("valid");
+  length.classList.add("invalid");
+   
+  }
+
+/*Condición de letras mayúsculas
+match(): busca coincidencias entre la cadena de texto 
+y expresiones regulares*/  
+
+  let mayusculas =  /[A-Z]/;
+  if(password1.value.match(mayusculas)){
+
+ mayus.classList.remove('invalid');
+  mayus.classList.add('valid');
+
+  }else{
+
+ mayus.classList.remove("valid");
+  mayus.classList.add("invalid");
+   
+  }
+
+/*Condción de letras minúsculas*/
+
+let minusculas = /[a-z]/;
+if(password1.value.match(minusculas)){
+
+minus.classList.remove('invalid');
+minus.classList.add('valid');
+}else{
+minus.classList.remove("valid");
+minus.classList.add("invalid");
+}
+
+
+/*Condición del caracter especial*/
+let especiales =/[$@$!%*?&]/;
+
+if(password1.value.match(especiales)){
+
+special.classList.remove('invalid');
+special.classList.add('valid');
+}else{
+special.classList.remove("valid");
+special.classList.add("invalid");
+}
+
+/*Condición de al menos un número*/
+let numbers = /(?=.*\d)/;
+
+if(password1.value.match(numbers)){
+
+number.classList.remove('invalid');
+number.classList.add('valid');
+}else{
+
+number.classList.remove("valid");
+number.classList.add("invalid");
+}
+
+});
+   
+
+
+
+/*if(myInput.value.match(upperCaseLetters)) {
+  capital.classList.remove("invalid");
+  capital.classList.add("valid");
+} else {
+  capital.classList.remove("valid");
+  capital.classList.add("invalid");
+}
+
+/[A-Z]/.test(password)
+*/
