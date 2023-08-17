@@ -55,7 +55,31 @@
                     </div>
                     <div class="data-login">
                       <label>Contraseña</label>
-                      <input type="password" placeholder="Escriba aqui su contraseña" required>
+                     <!--<input type="password" placeholder="Escriba aqui su contraseña" required> -->
+                    
+                     <div class="input-group">
+                      <input ID="txtPassword" type="Password" Class="form-control">
+                      <button id="show_password" class="btn btn-success" type="button" onclick="mostrarPassword()"> 
+                      <span class="fa fa-eye-slash icon"></span> </button>
+                      </div>
+
+
+                                    
+
+                  <script>
+                    function mostrarPassword(){
+                      var tipo = document.getElementById("txtPassword");
+                      if(tipo.type == "password"){
+                        tipo.type = "text";
+                      }else{
+                        tipo.type = "password";
+                      }
+                    }
+                  </script>
+
+
+
+
                     </div>
                     <div class="forgot-pass">
                       <a href="#">Olvidé mi contraseña</a>
@@ -69,6 +93,13 @@
                       sin usuario? <a href="login.html" target="_blank">Crea tu cuenta</a>
                     </div>
                   </form>
+
+
+
+
+
+
+
                 </div>
               </div>
   </nav>
