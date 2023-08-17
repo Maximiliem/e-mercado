@@ -31,13 +31,33 @@ nav a {
   background: transparent;
   border-radius: 6px;
   cursor: pointer;
+  /* top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%); */
 }
+
+.container-popup{
+  /* top: 50%;
+  left: 50%;
+  transform-origin: translate(-50%,-50%);
+  transform: center; */
+  position: relative;
+}
+
 .login-button:active {
   transform: scale(0.98);
 }
 
 /* /////////////BLOQUE CSS PARA POP UP LOG IN///////////////// */
-/* *{
+
+/* .login-button-ckbox {
+  display: none;
+  position: absolute;
+} */
+
+/*  ESTO ESTÁ COMENTADO PORQUE ES EL BOTON DE LOGIN ORIGINAL//////
+
+*{
   margin: 0;
   padding: 0;
   outline: none;
@@ -69,41 +89,69 @@ body{
   transform: translate(-50%,-50%);
 } */
 
-.container-popup {
-  position: absolute;
-  top: 50%;
-  left: 50%
-  transform:translate(-50%,-50%);
+.center-login-box { 
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;  
+  background: transparent;
+  border-radius: 6px;
+  cursor: pointer;
   margin: 0;
   padding: 0;
   outline: none;
   box-sizing: border-box;
+  transition: all 0.1s ease;
+  
 }
 
-/* input[type = 'checkbox']{
-  display: flex;
-} */
+/* CSS DE PRUEBA Y ERROR
+
+.login-button .container-popup {
+  display: none; 
+  position: absolute;
+  top: 50%;
+  left: 50%; */
+  
+  /* transform:translate(-50%,-50%);
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box; 
+}*/
+
+/* .login-button:active{
+  scale: 0.9;
+}  */
+
+input[type="checkbox"]{
+  display: none;
+} 
 
 /* .show-btn:active{
   scale: 0.9;
-} 
-
-input[type = 'checkbox']{
-  display: none;
 } */
 
 .container-popup{
+  display: none;
   scale: 0;
   opacity: 0;
   z-index: -1;
   background: #fff;
   width: 410px;
   padding: 30px;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  border-radius: 3%;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -50% 0 0 -50%;
+  transform:translate(-175%,25%);
 }
 
 #show:checked ~ .container-popup{
+  display: block;
   scale: 1;
   opacity: 1;
   z-index: 11;
@@ -129,20 +177,20 @@ input[type = 'checkbox']{
 
 .container-popup form{
   margin-top: -20px;
-  transition: all 0.3s ease;
+  transition: all 0.7s ease;
 }
 
-.container-popup form .data{
+.container-popup form .data-login{
   height: 45px;
   width: 100%;
   margin: 40px 0;
 }
 
-form .data label{
+form .data-login label{
   font-size: 18px;
 }
 
-form .data input{
+form .data-login input{
   height: 100%;
   width: 100%;
   padding-left: 10px;
@@ -150,10 +198,10 @@ form .data input{
   border: 1px solid silver;
 }
 
-form .data input:focus{
+form .data-login input:focus{
   border-color: #3498db;
   border-bottom-width: 2px;
-  /* animation: barfill 2s ease 0s infinite; */
+  animation: barfill 2s ease 0s infinite;
 }
 
 form .forgot-pass{
@@ -169,30 +217,31 @@ form .forgot-pass a:hover{
   text-decoration: underline;
 }
 
-form .btn{
+form .btn-login{
   height: 45px;
   margin: 30px 0;
   width: 100%;
   position: relative;
   overflow: hidden;
+  
 }
 
-form .btn .inner{
+form .btn-login .inner-login{
   height: 100%;
   width: 100%;
-  position: absolute;
-  /* left: -100%; */
-  /* z-index: -1; */
-  /* transition: all 0.4s; */
+  position: center;
+  left: -100%; 
+  z-index: -1; 
+  transition: all 0.4s;
 }
-form .btn:hover .inner{
+form .btn-login:hover .inner-login{
   left: 0;
 }
 
-form .btn button{
+form .btn-login button{
   height: 100%;
   width: 100%;
-  /* background: none; */
+  background: none;
   border: none;
   color: #fff;
   background: #11131e;
@@ -202,15 +251,16 @@ form .btn button{
   letter-spacing: 1px;
   cursor: pointer;
   border-radius: 10px;
-  overflow: hidden;
+  /* overflow: visible;
+  transform: scale(0.98); */
 }
 
-form .signup-link a{
+form .signup-link-login a{
   color: #3498db;
   text-decoration: none;
 }
 
-form .signup-link a:hover{
+form .signup-link-login a:hover{
   text-decoration: underline;
 }
 
@@ -219,7 +269,7 @@ form .signup-link a:hover{
       border-bottom-width: 1px;
   }
 
-  t0{
+  to{
       border-bottom-width: 100%;
   }
 }
