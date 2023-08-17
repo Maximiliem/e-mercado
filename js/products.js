@@ -26,24 +26,24 @@ document.addEventListener("DOMContentLoaded", () => {
         listaHtml += `<div class="producto">
          <img class="imagenCars" src=${item.image}>
          
-         <div class="divTexto">
+            <div class="divTexto">
 
-         <div class="divNombre">
-         <p class="nombre">${item.name}</p>
-         </div>
+                <div class="divNombre">
+                    <p class="nombre">${item.name}</p>
+                </div>
 
-         <div class="divDescripcion">
-         <p class="descripcion">${item.description}</p>
-         </div>
+               <div class="divDescripcion">
+                    <p class="descripcion">${item.description}</p>
+                </div>
 
-         <div class="divPrecio">
-         <p class="precio">Precio: ${item.currency} ${item.cost}</p>
-         </div>
+                <div class="divPrecio">
+                    <p class="precio">Precio: ${item.currency} ${item.cost}</p>
+                </div>
 
-         <div class="divVendidos">
-         <p class="vendidos">Vendidos: ${item.soldCount}</p>
-         </div>
-         </div>
+                <div class="divVendidos">
+                    <p class="vendidos">Vendidos: ${item.soldCount}</p>
+                </div>
+            </div>
        </div>
        <hr>
           `;
