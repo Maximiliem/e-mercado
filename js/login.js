@@ -30,7 +30,7 @@ function showAlertSuccess() {
    
    event.preventDefault();
    
-    const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])([A-Za-z\d$@$!%*?&]|[^ ]){6,15}$/;
+    const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])([A-Za-z\d$@$!%*?&]|[^ ]){6,15}/;
     
    /*Se agregó el método .trim() para eliminar los espacios en blanco.
    Utilizo regex para permitir el uso de diferentes símbolos en la contraseña*/
@@ -54,9 +54,7 @@ function showAlertSuccess() {
      } 
    
    
-   })
-   
-    });
+   }) });
    
    /*Ejemplos de algunas contraseñas que cumplen con los requisitos:
    
@@ -64,9 +62,9 @@ function showAlertSuccess() {
 
    function togglePopup() {
 
-    document.getElementById("login-button")
+  document.getElementById("login-button")
    
-     .classList.toggle("active");
+  .classList.toggle("active");
    
  } 
  
@@ -79,15 +77,6 @@ const mayus = document.getElementById('mayus');
 const minus = document.getElementById('minus');
 
   password1.addEventListener('input', function(){
-
-/*Estas funciones sirven para mostrar el mensaje de 
-validación cuando el usuario hace focus y cuando deja de hacerle 
-focus al input*/
- password1.onblur = function myBlur() {
-document.getElementById("mensaje").style.display = "none"; }
-
-password1.onfocus = function myFocus() {
- document.getElementById("mensaje").style.display = "block";}
 
 /*Condición del largo*/
   if (password1.value.length >= 6){
@@ -130,7 +119,6 @@ minus.classList.remove("valid");
 minus.classList.add("invalid");
 }
 
-
 /*Condición del caracter especial*/
 let especiales =/[$@$!%*?&]/;
 
@@ -157,17 +145,14 @@ number.classList.add("invalid");
 }
 
 });
+
+/*Estas funciones sirven para mostrar el mensaje de 
+validación cuando el usuario hace focus y cuando deja de hacerle 
+focus al input*/
+password1.onblur = function myBlur() {
+  document.getElementById("mensaje").style.display = "none"; }
+  
+password1.onfocus = function myFocus() {
+   document.getElementById("mensaje").style.display = "block";}
    
 
-
-
-/*if(myInput.value.match(upperCaseLetters)) {
-  capital.classList.remove("invalid");
-  capital.classList.add("valid");
-} else {
-  capital.classList.remove("valid");
-  capital.classList.add("invalid");
-}
-
-/[A-Z]/.test(password)
-*/
