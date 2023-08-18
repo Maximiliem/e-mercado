@@ -1,3 +1,4 @@
+
 .jumbotron,
 .card-body,
 .container,
@@ -225,7 +226,7 @@ form .signup-link a:hover{
 }
 /*////////FIN BLOQE CSS POP UP LOG IN//////////// */
 
-.bd-placeholder-img {
+/*.bd-placeholder-img {
   font-size: 1.125rem;
   text-anchor: middle;
   --webkit-user-select: none;
@@ -277,18 +278,18 @@ form .signup-link a:hover{
 
 .jumbotron .lead {
   font-size: 38px;
-}
+}*/
 
-footer {
+/*footer {
   padding-top: 3rem;
   padding-bottom: 3rem;
-}
+}*/
 
-footer p {
+/*footer p {
   margin-bottom: .25rem;
-}
+}*/
 
-.site-header a {
+/*.site-header a {
   color: white;
   transition: ease-in-out color .15s;
 }
@@ -399,9 +400,12 @@ a.custom-card:hover {
 
 .checked {
   color: orange;
-}
+}*/
 
-/*FC: estos son los estilos del mensaje de validación*/
+
+/*//////////////////////////////////////////////////////////////*/
+/*////FC: estos son los estilos del mensaje de validación//////*/
+/*/////////////////////////////////////////////////////////////*/
 
 .container {
   max-width: 550px;
@@ -417,29 +421,26 @@ a.custom-card:hover {
 
 #mensaje {
   display:none;
-  background: #ffffff;
-  color: #000;
+  background: #222;
+  color: #f8f8f8;
   position: absolute;
   padding: 18px 0px 0px 18px;
   width: 280px;
   height: 180px;
   box-sizing: border-box;
-  z-index: 100;
-  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
   text-align: left;
+  border-radius: 5px;
 }
 
 #mensaje h3 {
- /* padding: 0 10px;*/
   font-size: 13px;
-  font-family: 'Verdana', serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: 500;
 }
 #mensaje p {
- /*padding: 0 10px;*/
   padding-left: 10px;
   font-size: 12px;
-  font-family: 'Verdana', serif;
+  font-family: 'Poppins', sans-serif;
   margin: 5px;
 
 }
@@ -472,12 +473,130 @@ p.invalid {
 
 /*Estilos para el tríangulo del mensaje de validación*/
 
-/*.message-triangle:active{
+/*.message-triangle{
 
   width: 0px;
   height: 0px;
-
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
   border-bottom: 10px solid #ffffff;
 }*/
+
+/*#password1:focus ~ .message-triangle{
+  position: absolute;
+  left: 30px;
+  width: 0px;
+  height: 0px;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #222;
+}*/
+
+
+/*////////////////////////////////*/
+/*/ESTILOS FORMULARIO DE REGISTRO/*/
+/*///////////////////////////////*/
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap');
+
+
+body{
+  height: 100%;
+  width: 100%;
+}
+main {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+}
+
+#container-signIn {
+
+  font-family: 'Roboto', sans-serif;
+  color: #222;
+  background-color: #f8f8f8;
+  margin-top: 100px;
+  width: 90%;
+  padding: 30px;
+  max-width: 780px;
+  text-align: left;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+  box-sizing: border-box;
+
+}
+#container-signIn h1 {
+
+  font-weight: 700;
+  font-size: 28px;
+}
+.pie-pagina{
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.pie-pagina p{
+
+text-align: center;
+font-family:  'Roboto', sans-serif;
+font-weight: 400;
+margin-top: 1px;
+
+}
+
+.container-footer{
+    margin-top: 110px;
+}
+
+.form-control, .form-check-input{
+
+  margin-top: 20px;
+}
+.form-check-label{
+
+  margin-top: 14px;
+}
+
+#regBtn{
+
+width: 100%;
+background-color:#222;
+color: #f8f8f8;
+border: #222;
+margin-top: 20px;
+font-size: 16px;
+letter-spacing: 1px;
+border-radius: 5px;
+padding: 5px;
+border: 2px solid #222;
+}
+
+#regBtn:hover{
+  background-color: #f8f8f8;
+  color: #222;
+}
+
+/*.form-control:before{
+
+acá irían los íconos
+
+}*/
+
+.form-control{
+  border-radius: 0px;
+  border: none;
+  border-bottom: 1.3px solid #222;
+  background: none;
+}
+
+
+input:focus {
+  outline: #000408;
+  background: none;
+}
+
+

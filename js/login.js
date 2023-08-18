@@ -30,19 +30,26 @@ function showAlertSuccess() {
    
    event.preventDefault();
    
-    const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])([A-Za-z\d$@$!%*?&]|[^ ]){6,15}/;
+    const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&\s])([A-Za-z\d$@$!%*?&]|[^ ]){6,15}/;
     
-   /*Se agregó el método .trim() para eliminar los espacios en blanco.
-   Utilizo regex para permitir el uso de diferentes símbolos en la contraseña*/
-     if (nombre.value.trim() === "" || 
+   /*FC: Utilizo trim() para eliminar espacios en blanco.
+   Utilizo regex para permitir el uso de diferentes símbolos en la contraseña
+   Utilicé el método test para comprobar que la cadena coincide con lo que pide
+   una expresión regular, esta devuelve true o false*/
+
+  if (nombre.value.trim() === "" || 
      apellido.value.trim() === "" || 
      email.value.trim() === "" || 
-     !regex.test(password1.value.trim()) || 
-     !regex.test(password2.value.trim()) || 
+     !regex.test(password1.value) || 
+     !regex.test(password2.value) || 
      !terminos.checked || 
-     password1.value !== password2.value || 
-     password1.value.length < 6) {
-        
+     password1.value.trim() !== password2.value.trim() ||
+     password1.value.trim().length < 6) {
+
+    /*FC: problema a solucionar, no se valida la contraseña cuando
+    las contraseñas tienen espacios en blanco en distintos lugares
+    de las cadenas*/
+
         showAlertError();
         
      } else {
@@ -92,11 +99,12 @@ const minus = document.getElementById('minus');
 
 /*Condición de letras mayúsculas
 match(): busca coincidencias entre la cadena de texto 
-y expresiones regulares*/  
+y expresiones regulares, devuelve un arreglo con las coincidencias
+encontradas o null si no hay coincidencias*/  
 
   let mayusculas =  /[A-Z]/;
   if(password1.value.match(mayusculas)){
-
+    console.log("Coincidencias encontradas:", password1.value.match(mayusculas));
  mayus.classList.remove('invalid');
   mayus.classList.add('valid');
 
