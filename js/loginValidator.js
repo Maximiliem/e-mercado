@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // Función  el  inicio de sesión
+    // Función inicio de sesión
     function login() {
         // Obtiene los valores del correo electrónico y la contraseña
         const userEmail = document.getElementById("useremail").value;
