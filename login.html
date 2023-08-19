@@ -8,40 +8,51 @@
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
-
 </head>
 
 <body>
-  <main class="mt-5">
-    <div class="form-popup" id="myPopup"> <!--edito clase y id para posterior css-->
-      <div class="col">
-        <h1 class="mb-3">Registro</h1> <!--cambio encabezado-->
-        <hr class="my-4">
+  <main>
+<div class="form-popup" id="myPopup"> <!--edito clase y id para posterior css-->
+
+      <div id="container-signIn" > <!--Agregué el Id container-signIn-->
+     <!--FC: cambie el título de lugar--> <!--cambio encabezado-->
 
         <form action="" class="form-container" id="formulario"> <!--agrego clase para css-->
-        <div class="row g-3">
-          <div class="col-sm-6">
-            <label for="nombre" class="form-label">Nombre</label>
+        <div>
+          <div>
+            <h1>Registro</h1>
+           <!--<label for="nombre" class="form-label">Nombre</label>-->
             <input type="text" placeholder="Escriba primer nombre" class="form-control" id="nombre" required>
           </div>
 
-          <div class="col-sm-6">
-            <label for="apellido" class="form-label">Apellido</label>
+          <div>
+          <!--<label for="apellido" class="form-label">Apellido</label>-->
             <input type="text" placeholder="Escriba primer apellido" class="form-control" id="apellido" required>
           </div>
 
-          <div class="col-12">
-            <label for="email" class="form-label">Email</label>
+          <div>
             <input type="email" placeholder="Escriba mail válido" class="form-control" id="email" required>
+           <!--<label for="email" class="form-label">Email</label>-->
           </div>
-
-          <div class="col-sm-6">
-            <label for="password1" class="form-label">Contraseña</label>
+          <div>
+          <!--<label for="password1" class="form-label">Contraseña</label>-->
             <input type="password" placeholder="Escriba su contraseña" class="form-control" id="password1" required>
+            
+              <!--Este es el mensaje de validación de contraseña-->
+              <div class="message-triangle"></div>
+              <div id="mensaje">
+                <h3>La contraseña debe cumplir con los siguientes requisitos:</h3>
+                  <p id="length" class="invalid">Largo mínimo de <b>6 carácteres</b></p>
+                  <p id="special" class="invalid">Al menos <b>1 caracter especial</b></p>
+                  <p id="number" class="invalid">Al menos <b>1 número</b></p>
+                  <p id="mayus" class="invalid">Al menos <b>1 letra mayúscula</b></p>
+                  <p id="minus" class="invalid">Al menos <b>1 letra minuscula</b></p>
+            
+              </div>
           </div>
 
-          <div class="col-sm-6">
-            <label for="password2" class="form-label">Repetir contraseña</label>
+          <div>
+          <!--<label for="password2" class="form-label">Repetir contraseña</label>-->
             <input type="password" placeholder="Repita su contraseña" class="form-control" id="password2" required>
           </div>
 
@@ -50,22 +61,15 @@
             <label class="form-check-label" for="terminos">Acepto los términos y condiciones del servicio.</label>
           </div>
 
-          <button class="btn btn-primary" type="submit" id="regBtn">Registrarme</button>
+          <button type="submit" id="regBtn">Registrarme</button>
+
         </div>
       </form>
-
       </div>
-    </div>
 
-  </main>
-
-  <footer class="my-5 pt-5 text-muted text-center text-small">
-    <p class="mb-1">Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a
-        Programar</a></p>
-    <p class="mb-1">Es un sitio generado con fines estrictamente educativos. No realiza registros ni guarda datos de
-      ningún tipo.</p>
-  </footer>
 </div>
+  </main>
+ </div>
 
 <div class="alert alert-success alert-dismissible fade" role="alert" id="alert-success">
   <p>Datos guardados correctamente</p>
@@ -73,29 +77,22 @@
 </div>
 
 <div class="alert alert-danger alert-dismissible fade" role="alert" id="alert-danger">
-  <p>Los datos ingresados no cumplen con los requisitos solicitados
-   <!-- Tu contraseña no cumple con los requisitos. Debe contener: <br>
-   -Minimo 6 caracteres <br>
-    -Maximo 15 <br>
-    -Al menos una letra mayúscula <br>
-    -Al menos una letra minucula <br>
-    -Al menos un dígito <br>
-    -No espacios en blanco <br>
-    -Al menos 1 caracter especial
-  Me gustaría poner esto en la alerta, sin embargo lo intenté pero no me permite
-  seleccionar el campo "apellido", no entiendo por qué-->
-  </p>
+  <p>Los datos ingresados no cumplen con los requisitos solicitados</p>
   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 </div>
   </main>
-  <footer class="text-muted">
-    <div class="container">
-      <p class="float-end">
+
+  <footer class="pie-pagina">
+    <div class="container-footer">
+      <p>
         <a href="#">Volver arriba</a>
       </p>
-      <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a></p>
+      <p>Es un sitio generado con fines estrictamente educativos. No realiza registros ni guarda datos de
+        ningún tipo.</p>
+        <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a></p>
     </div>
   </footer>
+
   <script src="js/login.js"></script>
   <script src="js\bootstrap.bundle.min.js"></script>
 </body>

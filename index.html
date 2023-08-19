@@ -43,72 +43,38 @@
               </ul>
           </div>
       </div>
-                  <!-- BLOQUE CODIGO POP UP LOG IN ///////////////////////////////////<<<<<<<<<<<<<<<<< -->
-              <div class="center-login-box">
-                <input type="checkbox" class="login-button-ckbox"  id="show">
-                <label for="show" class="login-button">LOG IN</label> 
-                <div class="container-popup">
-                  <label for="show" class="close-btn fas fa-times" title="close">X</label>
-                  <div class="text">Inicia sesión</div>
-                  <form action="#">
-                    <div class="data-login">
-                      <label>Email</label>
-                      <input type="text" placeholder="Escriba aqui su email" required>
+      <label class="login-button" id="login-clic-button" onclick="window.open('loginPopup.html')">Login2<span type="checkbox" for="show" name="show" id="show"></label>
+      <input type="checkbox" for="show" name="show" id="show">
+            <!-- BLOQUE CODIGO POP UP LOG IN ///////////////////////////////////<<<<<<<<<<<<<<<<<
+              <div class="center">
+              <input type="checkbox" name="show" id="show">
+              <label for="show" class="show-btn">LOG IN/SIGN UP</label> -->
+              <div class="container-popup">
+                <label for="show" class="close-btn fas fa-times" title="colse">X</label>
+                <div class="text">Inicia sesión</div>
+                <form action="#">
+                  <div class="data">
+                    <label>Email</label>
+                    <input type="text" placeholder="Escriba aqui su email" required>
+                  </div>
+                  <div class="data">
+                    <label>Contraseña</label>
+                    <input type="password" placeholder="Escriba aqui su contraseña" required>
+                  </div>
+                  <div class="forgot-pass">
+                    <a href="#">Olvidé mi contraseña</a>
+                  </div>
+                  <div class="btn">
+                    <div class="inner">
+                        <button type="submit">LOGIN</button>
                     </div>
-                    <div class="data-login">
-                      <label>Contraseña</label>
-                     <!--<input type="password" placeholder="Escriba aqui su contraseña" required> -->
-                    
-
-
-                     <!--INICIOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO-->
-                     <div class="input-group">
-                      <input id="txtPassword" type="password" placeholder="Escriba su contraseña" Class="form-control">  
-                      <button id="show_password" class='fa fa-eye-slash' type="button" onclick="mostrarPassword()"> 
-                         </button> 
-                     </div>
-
-                    
-                    
-                  <script>
-                    function mostrarPassword(){
-                      var tipo = document.getElementById("txtPassword");
-                      if(tipo.type == "password"){
-                        tipo.type = "text";
-                        
-
-                      }else{
-                        tipo.type = "password";
-                        
-                      }
-                    }
-                    </script>
-
-                     <!--FINNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN-->
-
-
-                    </div>
-                    <div class="forgot-pass">
-                      <a href="#">Olvidé mi contraseña</a>
-                    </div>
-                    <div class="btn-login">
-                      <div class="inner-login">
-                          <button type="submit">LOGIN</button>
-                      </div>
-                    </div>
-                    <div class="signup-link-login">
-                      sin usuario? <a href="login.html" target="_blank">Crea tu cuenta</a>
-                    </div>
-                  </form>
-
-
-                  
-
-
-
-
-                </div>
+                  </div>
+                  <div class="signup-link">
+                    sin usuario? <a href="login.html" target="_blank">Crea tu cuenta</a>
+                  </div>
+               </form>
               </div>
+            </div>
   </nav>
   <main>
     <div class="jumbotron text-center"></div>
