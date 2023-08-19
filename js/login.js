@@ -164,3 +164,23 @@ password1.onfocus = function myFocus() {
    document.getElementById("mensaje").style.display = "block";}
    
 
+
+/*funcion ojitos de registro*/
+
+function mostrarPassword(){
+  var tipo = document.getElementById("password1");
+  if(tipo.type == "password"){
+    tipo.type = "text"
+  }else{
+    tipo.type = "password";
+  }
+}
+
+function mostrarPassword2(){
+  var tipo = document.getElementById("password2");
+  if(tipo.type == "password"){
+    tipo.type = "text";
+  }else{
+    tipo.type = "password";
+  }
+}
