@@ -407,9 +407,9 @@ a.custom-card:hover {
 /*////FC: estos son los estilos del mensaje de validación//////*/
 /*/////////////////////////////////////////////////////////////*/
 
-.container {
+/*.container {
   max-width: 550px;
-}
+}*/
 
 .alert {
   position: fixed;
