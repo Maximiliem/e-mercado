@@ -687,3 +687,62 @@ input:focus {
 }
 
 
+
+.imagenCars {
+  width: 20vw;
+  float: left;
+  margin-right: 4%;
+}
+
+.containerCars {
+  display: flex;
+  flex-direction: column;
+}
+
+.containerCars h4 {
+  text-align: center;
+}
+
+.lista-cars {
+  text-align: justify;
+  color: rgb(84, 84, 84);
+}
+
+.subtitulo4 {
+  margin-top: 2%;
+  margin-bottom: 2%;
+  letter-spacing:0.75vw;
+  font-size: 220%;
+}
+
+.subtitulo5 {
+  text-align: center;
+  color: rgb(58, 58, 58);
+  margin-bottom: 1%;
+}
+
+/* esto es la clase de la etiqueta span para la palabra Autos */
+.autos-negrita {
+  font-weight: bold;
+}
+
+.divNombre{
+  font-size:3.3vh;
+  /* letter-spacing:0.5vw; */ /*la variante que se me ocurre es disminuir el espacio, para darle un toque diferente a la letra*/
+  color: rgb(20, 20, 20);
+  font-weight: 510;
+}
+
+
+.divTexto {
+  display: inline-flexbox;
+  text-align: right;
+  font-size:2.4vh;
+}
+
+.producto:hover {
+  transform: scale(1.1);
+  animation-duration: 1ms;
+  transition: 0.4s;
+  background-color: rgba(231, 231, 231, 0.534);
+}
