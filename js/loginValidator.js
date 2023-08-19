@@ -11,20 +11,10 @@ document.addEventListener('DOMContentLoaded',() => {
             if(userEmail !== "" && userPassword !=="" ){
                 localStorage.setItem("logueado","true");
                 const userlogueado = localStorage.getItem("logueado");
-                //longinbuttonlabel.textContent = "Cerrar sesión";
+                longinbuttonlabel.textContent = "Cerrar sesión";
                 const containerPopup = document.querySelector('.container-popup');
                 containerPopup.innerHTML='';
                 containerPopup.style.display = 'none';
-                // Crear el botón de cerrar sesión
-                const closeButton = document.createElement('button');
-                closeButton.id = "logoutbutton";
-                closeButton.textContent = "Cerrar sesión";
-                closeButton.addEventListener('click', () => {
-                logout();
-                 });
-
-                // Insertar el botón después del botón de inicio de sesión
-                loginbuttonlabel.insertAdjacentElement('afterend', closeButton)
             }
         })
 
