@@ -58,6 +58,8 @@ function showAlertSuccess() {
    
        formula.reset();
        showAlertSuccess();
+       localStorage.setItem("logueado", "true")
+       window.location.href = "index.html";
      } 
    
    

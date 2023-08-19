@@ -126,7 +126,7 @@ body{
   scale: 0.9;
 }  */
 
-input[type="checkbox"]{
+.login-button-ckbox {
   display: none;
 } 
 
@@ -277,7 +277,7 @@ form .signup-link-login a:hover{
 }
 /*////////FIN BLOQE CSS POP UP LOG IN//////////// */
 
-/*.bd-placeholder-img {
+.bd-placeholder-img {
   font-size: 1.125rem;
   text-anchor: middle;
   --webkit-user-select: none;
@@ -329,18 +329,18 @@ form .signup-link-login a:hover{
 
 .jumbotron .lead {
   font-size: 38px;
-}*/
+}
 
-/*footer {
+footer {
   padding-top: 3rem;
   padding-bottom: 3rem;
-}*/
+}
 
-/*footer p {
+footer p {
   margin-bottom: .25rem;
-}*/
+}
 
-/*.site-header a {
+.site-header a {
   color: white;
   transition: ease-in-out color .15s;
 }
@@ -451,7 +451,7 @@ a.custom-card:hover {
 
 .checked {
   color: orange;
-}*/
+}
 
 
 /*//////////////////////////////////////////////////////////////*/
