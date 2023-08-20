@@ -162,10 +162,12 @@ validación cuando el usuario hace focus y cuando deja de hacerle
 focus al input*/
 password1.onblur = function myBlur() {
   document.getElementById("mensaje").style.display = "none";
+  document.getElementById("password2").style.visibility = "visible";
 }
 
 password1.onfocus = function myFocus() {
   document.getElementById("mensaje").style.display = "block";
+  document.getElementById("password2").style.visibility = "hidden";
 }
 
 

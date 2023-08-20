@@ -526,6 +526,7 @@ p.invalid {
 }
 
 
+
 /*Estilos para el tríangulo del mensaje de validación*/
 
 /*.message-triangle{
@@ -643,6 +644,8 @@ body {
 }
 
 /*ESTILO PARA LOS OJOS*/
+
+
 #ojito2 {
 
   background-color: #f8f8f8;
@@ -664,12 +667,6 @@ body {
   background-color: #f8f8f8;
   color: #222;
   border: none;
-  /*margin-top: 2px;
-  margin-bottom: 2px;-->
-  font-size: 16px;
-  border-radius: 50%;*/
-
-
 }
 
 #ojito1:hover {
@@ -694,9 +691,9 @@ input:focus {
   outline: #000408;
   background: none;
 }
+/* FINAL ESTILO FORM*/
 
-
-
+/*INICIO ESTILO PRODUCT AUTO*/
 .imagenCars {
   width: 20vw;
   float: left;
@@ -756,3 +753,4 @@ input:focus {
   transition: 0.4s;
   background-color: rgba(231, 231, 231, 0.534);
 }
+/*FIN ESTILOS PRODUCT AUTOS*/
