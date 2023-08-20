@@ -1,4 +1,3 @@
-
 .jumbotron,
 .card-body,
 .container,
@@ -15,7 +14,7 @@ nav a {
 }
 
 .nav,
-.nav_item
+.nav_item,
 .login-button {
   display: flex;
   height: 100%;
@@ -24,7 +23,7 @@ nav a {
   column-gap: 15px;
 }
 
-.login-button{
+.login-button {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: #fff;
   padding: 6px 24px;
@@ -37,7 +36,7 @@ nav a {
   transform: translate(-50%,-50%); */
 }
 
-.container-popup{
+.container-popup {
   /* top: 50%;
   left: 50%;
   transform-origin: translate(-50%,-50%);
@@ -90,11 +89,11 @@ body{
   transform: translate(-50%,-50%);
 } */
 
-.center-login-box { 
+.center-login-box {
   display: flex;
   position: relative;
   align-items: center;
-  justify-content: center;  
+  justify-content: center;
   background: transparent;
   border-radius: 6px;
   cursor: pointer;
@@ -104,7 +103,7 @@ body{
   box-sizing: border-box;
   transition: all 0.1s ease-out;
   /* transform: translate(-50%,-50%) scale(1); */
-  
+
 }
 
 /* CSS DE PRUEBA Y ERROR
@@ -114,8 +113,8 @@ body{
   position: absolute;
   top: 50%;
   left: 50%; */
-  
-  /* transform:translate(-50%,-50%);
+
+/* transform:translate(-50%,-50%);
   margin: 0;
   padding: 0;
   outline: none;
@@ -128,13 +127,13 @@ body{
 
 .login-button-ckbox {
   display: none;
-} 
+}
 
 /* .show-btn:active{
   scale: 0.9;
 } */
 
-.container-popup{
+.container-popup {
   display: none;
   scale: 0;
   opacity: 0;
@@ -149,17 +148,17 @@ body{
   top: 50%;
   left: 50%;
   margin: -50% 0 0 -50%;
-  transform:translate(-175%,25%);
+  transform: translate(-175%, 25%);
 }
 
-#show:checked ~ .container-popup{
+#show:checked~.container-popup {
   display: block;
   scale: 1;
   opacity: 1;
   z-index: 11;
 }
 
-.container-popup .close-btn{
+.container-popup .close-btn {
   position: absolute;
   right: 20px;
   top: 15px;
@@ -167,32 +166,32 @@ body{
   font-size: 18px;
 }
 
-.container-popup .close-btn:hover{
+.container-popup .close-btn:hover {
   color: #3498db;
 }
 
-.container-popup .text{
+.container-popup .text {
   font-size: 35px;
   font-weight: 600;
   text-align: center;
 }
 
-.container-popup form{
+.container-popup form {
   margin-top: -20px;
   transition: all 0.7s ease;
 }
 
-.container-popup form .data-login{
+.container-popup form .data-login {
   height: 45px;
   width: 100%;
   margin: 40px 0;
 }
 
-form .data-login label{
+form .data-login label {
   font-size: 18px;
 }
 
-form .data-login input{
+form .data-login input {
   height: 100%;
   width: 100%;
   padding-left: 10px;
@@ -200,47 +199,48 @@ form .data-login input{
   border: 1px solid silver;
 }
 
-form .data-login input:focus{
+form .data-login input:focus {
   border-color: #3498db;
   border-bottom-width: 2px;
   animation: barfill 2s ease 0s infinite;
 }
 
-form .forgot-pass{
+form .forgot-pass {
   margin-top: -8px;
 }
 
-form .forgot-pass a{
+form .forgot-pass a {
   color: #3498db;
   text-decoration: none;
 }
 
-form .forgot-pass a:hover{
+form .forgot-pass a:hover {
   text-decoration: underline;
 }
 
-form .btn-login{
+form .btn-login {
   height: 45px;
   margin: 30px 0;
   width: 100%;
   position: relative;
   overflow: hidden;
-  
+
 }
 
-form .btn-login .inner-login{
+form .btn-login .inner-login {
   height: 100%;
   width: 100%;
   position: center;
-  left: -100%; 
-  z-index: -1; 
+  left: -100%;
+  z-index: -1;
   transition: all 0.4s;
 }
-form .btn-login:hover .inner-login{
+
+form .btn-login:hover .inner-login {
   left: 0;
 }
 
-form .btn-login button{
+form .btn-login button {
   height: 100%;
   width: 100%;
   background: none;
@@ -257,24 +257,25 @@ form .btn-login button{
   transform: scale(0.98); */
 }
 
-form .signup-link-login a{
+form .signup-link-login a {
   color: #3498db;
   text-decoration: none;
 }
 
-form .signup-link-login a:hover{
+form .signup-link-login a:hover {
   text-decoration: underline;
 }
 
-@keyframes barfill{
-  from{
-      border-bottom-width: 1px;
+@keyframes barfill {
+  from {
+    border-bottom-width: 1px;
   }
 
-  to{
-      border-bottom-width: 100%;
+  to {
+    border-bottom-width: 100%;
   }
 }
+
 /*////////FIN BLOQE CSS POP UP LOG IN//////////// */
 
 .bd-placeholder-img {
@@ -473,7 +474,7 @@ a.custom-card:hover {
 }
 
 #mensaje {
-  display:none;
+  display: none;
   background: #222;
   color: #f8f8f8;
   position: absolute;
@@ -490,6 +491,7 @@ a.custom-card:hover {
   font-family: 'Poppins', sans-serif;
   font-weight: 500;
 }
+
 #mensaje p {
   padding-left: 10px;
   font-size: 12px;
@@ -553,15 +555,16 @@ p.invalid {
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap');
 
 
-body{
+body {
   height: 100%;
   width: 100%;
 }
+
 .main-login {
- display: flex;
- flex-direction: column;
- align-items: center;
- justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 #container-signIn {
@@ -575,16 +578,18 @@ body{
   max-width: 780px;
   text-align: left;
   border-radius: 5px;
-  box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
   box-sizing: border-box;
 
 }
+
 #container-signIn h1 {
 
   font-weight: 700;
   font-size: 28px;
 }
-.pie-pagina{
+
+.pie-pagina {
 
   display: flex;
   align-items: center;
@@ -592,79 +597,82 @@ body{
   flex-direction: column;
 }
 
-.pie-pagina p{
+.pie-pagina p {
 
-text-align: center;
-font-family:  'Roboto', sans-serif;
-font-weight: 400;
-margin-top: 1px;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  margin-top: 1px;
 
 }
 
-.container-footer{
-    margin-top: 110px;
+.container-footer {
+  margin-top: 110px;
 }
 
-.form-control, .form-check-input{
+.form-control,
+.form-check-input {
 
   margin-top: 20px;
 }
-.form-check-label{
+
+.form-check-label {
 
   margin-top: 14px;
 }
 
-#regBtn{
+#regBtn {
 
-width: 100%;
-background-color:#222;
-color: #f8f8f8;
-border: #222;
-margin-top: 20px;
-font-size: 16px;
-letter-spacing: 1px;
-border-radius: 5px;
-padding: 5px;
-border: 2px solid #222;
+  width: 100%;
+  background-color: #222;
+  color: #f8f8f8;
+  border: #222;
+  margin-top: 20px;
+  font-size: 16px;
+  letter-spacing: 1px;
+  border-radius: 5px;
+  padding: 5px;
+  border: 2px solid #222;
 }
 
 
 
-#regBtn:hover{
+#regBtn:hover {
   background-color: #f8f8f8;
   color: #222;
 }
+
 /*ESTILO PARA LOS OJOS*/
-#ojito2{
+#ojito2 {
 
   background-color: #f8f8f8;
-  color:#222;
-  border:none;
+  color: #222;
+  border: none;
   margin-top: 2px;
   margin-bottom: 2px;
   font-size: 16px;
   letter-spacing: 1px;
   border-radius: 5px;
   padding: 5px;
-  }
+}
 
-#ojito2:hover{
+#ojito2:hover {
   font-size: 22px;
 }
 
-#ojito1{
+#ojito1 {
   background-color: #f8f8f8;
-  color:#222;
-  border:none;
- /*margin-top: 2px;
+  color: #222;
+  border: none;
+  /*margin-top: 2px;
   margin-bottom: 2px;-->
   font-size: 16px;
   border-radius: 50%;*/
- 
 
-   }
 
-#ojito1:hover{
+}
+
+#ojito1:hover {
   font-size: 22px;
 }
 
@@ -674,7 +682,7 @@ acá irían los íconos
 
 }*/
 
-.form-control{
+.form-control {
   border-radius: 0px;
   border: none;
   border-bottom: 1.3px solid #222;
@@ -712,7 +720,7 @@ input:focus {
 .subtitulo4 {
   margin-top: 2%;
   margin-bottom: 2%;
-  letter-spacing:0.75vw;
+  letter-spacing: 0.75vw;
   font-size: 220%;
 }
 
@@ -727,9 +735,10 @@ input:focus {
   font-weight: bold;
 }
 
-.divNombre{
-  font-size:3.3vh;
-  /* letter-spacing:0.5vw; */ /*la variante que se me ocurre es disminuir el espacio, para darle un toque diferente a la letra*/
+.divNombre {
+  font-size: 3.3vh;
+  /* letter-spacing:0.5vw; */
+  /*la variante que se me ocurre es disminuir el espacio, para darle un toque diferente a la letra*/
   color: rgb(20, 20, 20);
   font-weight: 510;
 }
@@ -738,7 +747,7 @@ input:focus {
 .divTexto {
   display: inline-flexbox;
   text-align: right;
-  font-size:2.4vh;
+  font-size: 2.4vh;
 }
 
 .producto:hover {
