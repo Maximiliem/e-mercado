@@ -1,4 +1,4 @@
- // Esperar hasta que el contenido del DOM (estructura HTML) esté completamente cargado
+// Esperar hasta que el contenido del DOM (estructura HTML) esté completamente cargado
 document.addEventListener("DOMContentLoaded", () => {
 
   // Obtener el primer elemento con la clase "lista-cars" que fue añadida en products.html
@@ -57,88 +57,4 @@ document.addEventListener("DOMContentLoaded", () => {
     .catch((error) => {
       console.error("Error en la solicitud fetch:", error);
     });
-});
-
-/* const searchInput = document.getElementById('search-input');
-const searchResults = document.getElementById('search-results');
-
-searchInput.addEventListener('input', ()=> {
-  let searchText = searchInput.value.toLowerCase();
-
-  let a = productsArray.products.filter(product => product.name.toLowerCase().includes(searchText));
-  showProductsList(a);
-});
- */
-
-
-
-function sortAndShowCategories(sortCriteria){
-    
-    ordenado = sortProducts(sortCriteria, productsArray.products);
-
-    showProductsList(ordenado);
-}
-
-
-document.addEventListener("DOMContentLoaded", function(e){
-    getJSONData(ARTICULOS).then(function(resultObj){
-        if (resultObj.status === "ok")
-        {
-            productsArray = resultObj.data;
-            showProductsList(productsArray.products); 
-        }
-    });
-
-    document.getElementById("sortAsc").addEventListener("click", function(){
-        sortAndShowCategories(ORDER_ASC_BY_PRICE);
-    });
-
-    document.getElementById("sortDesc").addEventListener("click", function(){
-        sortAndShowCategories(ORDER_DESC_BY_PRICE);
-    });
-
-    document.getElementById("sortByCount").addEventListener("click", function(){
-        sortAndShowCategories(ORDER_BY_PROD_SOLDCOUNT);
-    });
-
-    document.getElementById("clearRangeFilter").addEventListener("click", function(){
-        document.getElementById("rangeFilterCountMin").value = "";
-        document.getElementById("rangeFilterCountMax").value = "";
-
-        minCount = undefined;
-        maxCount = undefined;
-
-        showProductsList(productsArray.products);
-    });
-
-    document.getElementById("rangeFilterCount").addEventListener("click", function(){
-        minCount = document.getElementById("rangeFilterCountMin").value;
-        maxCount = document.getElementById("rangeFilterCountMax").value;
-
-        if ((minCount != undefined) && (minCount != "") && (parseInt(minCount)) >= 0){
-            minCount = parseInt(minCount);
-        }
-        else{
-            minCount = undefined;
-        }
-
-        if ((maxCount != undefined) && (maxCount != "") && (parseInt(maxCount)) >= 0){
-            maxCount = parseInt(maxCount);
-        }
-        else{
-            maxCount = undefined;
-        }
-
-        showProductsList(productsArray.products);
-    });
-});
-
-const searchInput = document.getElementById('search-input');
-const searchResults = document.getElementById('search-results');
-
-searchInput.addEventListener('input', ()=> {
-  let searchText = searchInput.value.toLowerCase();
-
-  let a = productsArray.products.filter(product => product.name.toLowerCase().includes(searchText));
-  showProductsList(a);
 });
