@@ -10,6 +10,8 @@
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
   <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script> <!-- SEARCHBAR CON W3 -->
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'> <!-- para barra mariana -->
 </head>
 
 <body>
@@ -20,7 +22,7 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav w-100 justify-content-between">
+        <ul class="navbar-nav w-100 justify-content-between" id="barranavegacion">
           <li class="nav-item">
             <a class="nav-link active" href="index.html">Inicio</a>
           </li>
@@ -33,42 +35,85 @@
           <li class="nav-item">
             <a class="nav-link" href="login.html" onclick="openForm()">Crear cuenta</a>
           </li>
+          <li class="nav-item">
+            <div class="center-login-box">
+
+              <input type="checkbox" class="login-button-ckbox" id="show">
+              <label id="longinbuttonlabel" for="show" class="login-button">Iniciar sesión</label>
+        
+              <div class="container-popup">
+                <label for="show" class="close-btn fas fa-times" title="close">X</label>
+                  <div class="text">Iniciar sesión</div>
+                    <form action="#">
+                  <div class="data-login">
+                    <label>Email</label>
+                    <input id="useremail" type="text" placeholder="Escriba aqui su email" required>
+                  </div>
+                  <div class="data-login">
+                    <label>Contraseña</label>
+                    <input id="userpassword" type="password" placeholder="Escriba aqui su contraseña" required>
+                  </div>
+                  <div class="forgot-pass">
+                    <a href="#">Olvidé mi contraseña</a>
+                  </div>
+                  <div class="btn-login">
+                    <div class="inner-login">
+                      <button id="loginbutton" type="submit">Entrar</button>
+                    </div>
+                  </div>
+                  <div class="signup-link-login">
+                    ¿No tienes usuario? <a href="login.html" target="_blank">Crea tu cuenta</a>
+                  </div>
+                </form>
+              </div>
+            </div>
+            
+          </li>
+          <li class="nav-item">
+              <!--PARA INCERTAR BOTTON DE BUSQUEDA EN LA BARRA-->
+            <!-- <div class="barrabuscar">
+              <input id="searchbar" type="text" placeholder="Buscar..." required>
+              <div class="btnbusqueda-barrabuscar">
+                <i class="fa fa-search incon"></i>
+              </div>
+            </div> -->
+            <!--fin del boton de busqueda-->
+
+            <!-- <div class="wrapper">
+              <div class="search_box_wrap" id="div-wrap">
+                <div class="search_box">
+                  <input type="text" name="search" placeholder="Search" class="input_search" id="searchInput">
+                  <div id="search-results"></div>
+                </div>
+                <div class="search_btn" id="searchButton">
+                  <button class="botonbuscar"><span class="icon">
+                    <ion-icon name="search-outline"></ion-icon>
+                  </span></button>
+                </div>
+                <div class="close_btn" id="botoncerrar">
+                  <button class="botoncerrar"><span class="icon">
+                    <ion-icon name="close-outline"></ion-icon>
+                  </span></button>
+                </div>
+              </div>
+            </div> -->
+
+              
+            <div id="search-container">
+              <form action="https://maximiliem.github.io/e-mercado/" target="_top">
+                <input type="search" id="search-input" placeholder="Buscar...">
+                <div id="search-results"></div>
+              </div>
+              </form>
+            </div>
+
+          </li>
 
         </ul>
       </div>
     </div>
-    <!-- BLOQUE CODIGO POP UP LOG IN ///////////////////////////////////<<<<<<<<<<<<<<<<< -->
-    <div class="center-login-box">
-
-      <input type="checkbox" class="login-button-ckbox" id="show">
-      <label id="longinbuttonlabel" for="show" class="login-button">Iniciar sesión</label>
-
-      <div class="container-popup">
-        <label for="show" class="close-btn fas fa-times" title="close">X</label>
-        <div class="text">Iniciar sesión</div>
-        <form action="#">
-          <div class="data-login">
-            <label>Email</label>
-            <input id="useremail" type="text" placeholder="Escriba aqui su email" required>
-          </div>
-          <div class="data-login">
-            <label>Contraseña</label>
-            <input id="userpassword" type="password" placeholder="Escriba aqui su contraseña" required>
-          </div>
-          <div class="forgot-pass">
-            <a href="#">Olvidé mi contraseña</a>
-          </div>
-          <div class="btn-login">
-            <div class="inner-login">
-              <button id="loginbutton" type="submit">Entrar</button>
-            </div>
-          </div>
-          <div class="signup-link-login">
-            ¿No tienes usuario? <a href="login.html" target="_blank">Crea tu cuenta</a>
-          </div>
-        </form>
-      </div>
-    </div>
+    <!-- BLOQUE CODIGO  ///////////////////////////////////<<<<<<<<<<<< -->        
+    
   </nav>
   <main>
     <div class="jumbotron text-center"></div>
@@ -126,6 +171,7 @@
   <script src="js/init.js"></script>
   <!-- <script src="js/login.js"></script> -->
   <script src="js/loginValidator.js"></script> <!--s/m ruta al script login-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 
