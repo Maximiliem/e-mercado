@@ -4,8 +4,13 @@ document.addEventListener("DOMContentLoaded", () => {
   // Obtener el primer elemento con la clase "lista-cars" que fue añadida en products.html
   const listaCars = document.getElementsByClassName("lista-cars")[0];
 
+  // Código para obtener la categoría de cada producto en función a la que se elija
+  const catID = localStorage.getItem("catID");
+  const productsData = `https://japceibal.github.io/emercado-api/cats_products/${catID}.json`;
+
+
   // Realizar una solicitud a la URL proporcionada usando el método fetch
-  fetch("https://japceibal.github.io/emercado-api/cats_products/101.json")
+  fetch(productsData)
 
     // Cuando la respuesta de la solicitud se recibe, la convertimos a formato JSON
     .then((response) => response.json())
