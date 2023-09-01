@@ -86,28 +86,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
   }); */
 
-  const searchInputProducto = document.getElementById('search-input-producto');
-  const searchResultsProducto = document.getElementById('search-results-producto');
-  
-  searchInputProducto.addEventListener('input', () => {
-    let searchTextProducto = searchInputProducto.value.toLowerCase();
-    
-    fetch("https://japceibal.github.io/emercado-api/cats_products/" + localStorage.getItem("catID") + ".json")
-      .then(response => response.json())
-      .then(data => {
-        let filteredProducts = data.products.filter(product => product.name.toLowerCase().includes(searchTextProducto));
-  
-        if (filteredProducts.length === 0) {
-          searchResultsProducto.innerHTML = '<p>No se encontraron resultados</p>';
-        } else {
-          showProductsList(filteredProducts);
-        }
-      })
-      .catch(error => {
-        console.error('Error al obtener los productos:', error);
-      });
-  });
-
   /* ----------INICIO CODIGO BARRA BUSQUEDA------------- */
   
   function showProductsList(productsArray) {
@@ -142,6 +120,30 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  const searchInputProducto = document.getElementById('search-input-producto');
+  const searchResultsProducto = document.getElementById('search-results-producto');
+  
+  searchInputProducto.addEventListener('input', () => {
+    let searchTextProducto = searchInputProducto.value.toLowerCase();
+    
+    fetch("https://japceibal.github.io/emercado-api/cats_products/" + localStorage.getItem("catID") + ".json")
+      .then(response => response.json())
+      .then(data => {
+        let filteredProducts = data.products.filter(product => product.name.toLowerCase().includes(searchTextProducto));
+  
+        if (filteredProducts.length === 0) {
+          searchResultsProducto.innerHTML = '<p>No se encontraron resultados</p>';
+        } else {
+          showProductsList(filteredProducts);
+        }
+      })
+      .catch(error => {
+        console.error('Error al obtener los productos:', error);
+      });
+  });
+
+/* codigo original sin filtrados por descripcion---
+
 const productsArray = "https://japceibal.github.io/emercado-api/cats_products/"+localStorage.getItem("catID")+".json";
 
 searchInputProducto.addEventListener('input', () => {
@@ -155,7 +157,7 @@ searchInputProducto.addEventListener('input', () => {
     } else {
       showProductsList(filteredProducts);
     }
-  });
+  }); */
 
 
  

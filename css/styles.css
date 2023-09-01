@@ -702,7 +702,7 @@ input:focus {
 .search-results-producto p {
   color: red;
   background-color: whitesmoke;
-  padding: center;
+  
 }
 
 
@@ -737,10 +737,8 @@ input:focus {
 .search-results-categoria p{
   color: red;
   background-color: whitesmoke;
-  /* padding: 15px;
-  width: 250px;
-  position: center;
-} */
+  
+} 
 
 
 
