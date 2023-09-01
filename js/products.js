@@ -1,3 +1,4 @@
+
 // Esperar hasta que el contenido del DOM (estructura HTML) esté completamente cargado
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -7,7 +8,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // Código para obtener la categoría de cada producto en función a la que se elija
   const catID = localStorage.getItem("catID");
   const productsData = `https://japceibal.github.io/emercado-api/cats_products/${catID}.json`;
-
 
   // Realizar una solicitud a la URL proporcionada usando el método fetch
   fetch(productsData)
@@ -22,13 +22,15 @@ document.addEventListener("DOMContentLoaded", () => {
       let listaHtml = "";
 
       // Iterar a través de los elementos en el arreglo "products" dentro de los datos
-      data.products.forEach((item) => {
+      let arrayProducts = data.products;
+      function showProducts(products) {
+      products.forEach((item) => {
 
         // Mostrar en la consola la información del producto actual
         console.log(item);
 
         // Generar el fragmento de HTML para mostrar la información del producto
-        listaHtml += `<div class="producto">
+        listaHtml.innerHTML += `<div class="producto">
          <img class="imagenCars" src=${item.image}>
          
             <div class="divTexto">
@@ -50,16 +52,33 @@ document.addEventListener("DOMContentLoaded", () => {
                 </div>
             </div>
        </div>
-       <hr>
-          `;
+       <hr>`;
       });
+
+/*Funcionalidades de filtrado y orden*/
+
+function filtrados(products) {
+  const filteredProducts = products.filter((product) => {
+  return product.cost >= precioMin && product.cost <= precioMax;
+  });
+  showProducts(filteredProducts)
+  console.log(filteredProducts);
+}
+filtrar.addEventListener("click", () =>{
+filtrados(arrayProducts)
+}) 
 
       // Asignar el HTML generado a la estructura con la clase "lista-cars"
       listaCars.innerHTML = listaHtml;
-    })
+ } })
 
     // En caso de error en la solicitud o en el manejo de datos, mostrar un mensaje de error en la consola
     .catch((error) => {
       console.error("Error en la solicitud fetch:", error);
     });
+
+
+
+
+
 });
