@@ -149,66 +149,75 @@ function sortAndShowCategories(sortCriteria){
     showProductsList(ordenado);
 }
 
+/* ----------INICIO CODIGO BARRA BUSQUEDA------------- */
 
-/* document.addEventListener("DOMContentLoaded", function(e){
-    getJSONData(ARTICULOS).then(function(resultObj){
-        if (resultObj.status === "ok")
-        {
-            productsArray = resultObj.data;
-            showProductsList(productsArray.products); 
-        }
-    });
 
-    document.getElementById("sortAsc").addEventListener("click", function(){
-        sortAndShowCategories(ORDER_ASC_BY_PRICE);
-    });
+const searchInputCategoria = document.getElementById('search-input-categoria');
+const searchResultsCategoria = document.getElementById('search-results-categoria');
 
-    document.getElementById("sortDesc").addEventListener("click", function(){
-        sortAndShowCategories(ORDER_DESC_BY_PRICE);
-    });
+searchInputCategoria.addEventListener('input', () => {
+  let searchTextCategoria = searchInputCategoria.value.toLowerCase();
+  
+  fetch("https://japceibal.github.io/emercado-api/cats_products/" + localStorage.getItem("catID") + ".json")
+    .then(response => response.json())
+    .then(data => {
+      let filteredProducts = data.products.filter(product => product.name.toLowerCase().includes(searchTextCategoria));
 
-    document.getElementById("sortByCount").addEventListener("click", function(){
-        sortAndShowCategories(ORDER_BY_PROD_SOLDCOUNT);
-    });
-
-    document.getElementById("clearRangeFilter").addEventListener("click", function(){
-        document.getElementById("rangeFilterCountMin").value = "";
-        document.getElementById("rangeFilterCountMax").value = "";
-
-        minCount = undefined;
-        maxCount = undefined;
-
-        showProductsList(productsArray.products);
-    });
-
-    document.getElementById("rangeFilterCount").addEventListener("click", function(){
-        minCount = document.getElementById("rangeFilterCountMin").value;
-        maxCount = document.getElementById("rangeFilterCountMax").value;
-
-        if ((minCount != undefined) && (minCount != "") && (parseInt(minCount)) >= 0){
-            minCount = parseInt(minCount);
-        }
-        else{
-            minCount = undefined;
-        }
-
-        if ((maxCount != undefined) && (maxCount != "") && (parseInt(maxCount)) >= 0){
-            maxCount = parseInt(maxCount);
-        }
-        else{
-            maxCount = undefined;
-        }
-
-        showProductsList(productsArray.products);
+      if (filteredProducts.length === 0) {
+        searchResultsCategoria.innerHTML = '<p>No se encontraron resultados</p>';
+      } else {
+        showProductsList(filteredProducts);
+      }
+    })
+    .catch(error => {
+      console.error('Error al obtener los productos:', error);
     });
 });
- */
-const searchInput = document.getElementById('search-input');
-const searchResults = document.getElementById('search-results');
 
-searchInput.addEventListener('input', ()=> {
-  let searchText = searchInput.value.toLowerCase();
+function showProductsList(productsArray) {
+  searchResultsCategoria.innerHTML = ''; // Limpiar contenido previo
+  
+  productsArray.forEach(product => {
+    const productDiv = document.createElement('div');
+    
+    const productHTML = `
+      <div class="producto">
+        <img class="imagenCars" src=${product.image}>
+        <div class="divTexto">
+          <div class="divNombre">
+            <p class="nombre">${product.name}</p>
+          </div>
+          <div class="divDescripcion">
+            <p class="descripcion">${product.description}</p>
+          </div>
+          <div class="divPrecio">
+            <p class="precio">Precio: ${product.currency} ${product.cost}</p>
+          </div>
+          <div class="divVendidos">
+            <p class="vendidos">Vendidos: ${product.soldCount}</p>
+          </div>
+        </div>
+      </div>
+      <hr>
+    `;
+    
+    productDiv.innerHTML = productHTML;
+    searchResultsCategoria.appendChild(productDiv);
+  });
+}
 
-  let a = productsArray.products.filter(product => product.name.toLowerCase().includes(searchText));
-  showProductsList(a);
+
+const productsArray = "https://japceibal.github.io/emercado-api/cats_products/"+localStorage.getItem("catID")+".json";
+
+searchInputProducto.addEventListener('input', () => {
+  let searchTextProducto = searchInputProducto.value.toLowerCase();
+
+  let filteredProducts = productsArray.products.filter(product => product.name.toLowerCase().includes(searchTextProducto));
+
+  if (filteredProducts.length === 0) {
+      searchResultsProducto.innerHTML = '';
+      searchResultsProducto.innerHTML = '<p>No se encontraron resultados</p>';
+  } else {
+    showProductsList(filteredProducts);
+  }
 });
