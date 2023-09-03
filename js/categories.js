@@ -151,7 +151,7 @@ function sortAndShowCategories(sortCriteria){
 
 /* ----------INICIO CODIGO BARRA BUSQUEDA------------- */
 
-
+/* EN DESARROLLO
 const searchInputCategoria = document.getElementById('search-input-categoria');
 const searchResultsCategoria = document.getElementById('search-results-categoria');
 
@@ -216,8 +216,8 @@ searchInputProducto.addEventListener('input', () => {
 
   if (filteredProducts.length === 0) {
       searchResultsProducto.innerHTML = '';
-      searchResultsProducto.innerHTML = '<p>No se encontraron resultados</p>';
+      searchResultsProducto.innerHTML = '<p>No se encontraron resultados</p>'; 
   } else {
     showProductsList(filteredProducts);
   }
-});
+}); */
