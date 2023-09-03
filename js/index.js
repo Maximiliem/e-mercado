@@ -12,3 +12,13 @@ document.addEventListener("DOMContentLoaded", function(){
         window.location = "products.html"
     });
 });
+
+const searchInput = document.getElementById('search-input');
+const searchResults = document.getElementById('search-results');
+
+searchInput.addEventListener('input', ()=> {
+  let searchText = searchInput.value.toLowerCase();
+
+  let a = productsArray.products.filter(product => product.name.toLowerCase().includes(searchText));
+  showProductsList(a);
+});

@@ -1,11 +1,14 @@
 // Traer los elementos del HTML de los filtros
-const precioMin = parseFloat(document.getElementById("rangeFilterCountMin").value);
-const precioMax = parseFloat(document.getElementById("rangeFilterCountMax").value);
+const precioMinInput = document.getElementById("rangeFilterCountMin");
+const precioMaxInput = document.getElementById("rangeFilterCountMax");
 const botonFiltrar = document.getElementById("rangeFilterCount");
 const limpiarFiltros = document.getElementById("clearRangeFilter");
 const botonAsc = document.getElementById("sortAsc");
 const botonDesc = document.getElementById("sortDesc");
 const botonRelevancia = document.getElementById("sortByCount");
+const searchInputProducto = document.getElementById('search-input-producto');
+const searchResultsProducto = document.getElementById('search-results-producto');
+
 let filteredProducts = [];
 
 // Definir una función para mostrar los productos
@@ -65,8 +68,8 @@ function sortRelevancia(data) {
 
 // Función para filtrar el precio de los productos
 function filtrar(data) {
-  const precioMin = parseFloat(document.getElementById("rangeFilterCountMin").value);
-  const precioMax = parseFloat(document.getElementById("rangeFilterCountMax").value);
+  const precioMin = parseFloat(precioMinInput.value);
+  const precioMax = parseFloat(precioMaxInput.value);
 
   filteredProducts = data.products.filter(
     (item) => item.cost >= precioMin && item.cost <= precioMax
@@ -80,11 +83,24 @@ function filtrar(data) {
 
 // Función para limpiar el contenido de los rangos
 function clearInputs() {
-  let precioMaxInput = document.getElementById("rangeFilterCountMax");
-  let precioMinInput = document.getElementById("rangeFilterCountMin");
   precioMaxInput.value = "";
   precioMinInput.value = "";
+}
+
+function filtrarbusqueda(data) {
+  let searchTextProducto = searchInputProducto.value.toLowerCase();
   
+  let filteredProductsBusqueda = data.products.filter(item => {
+      const nombreLowerCase = item.name.toLowerCase(); /*para búsqueda por nombre*/
+      const descripcionLowerCase = item.description.toLowerCase(); /*para búsqueda por descripción*/
+      return nombreLowerCase.includes(searchTextProducto) || descripcionLowerCase.includes(searchTextProducto);
+    });
+    mostrarProductos({ products: filteredProductsBusqueda });
+    // if (filteredProductsBusqueda.length === 0) {
+    //   searchResultsProducto.innerHTML = '<p>No se encontraron resultados</p>';
+    // } else {
+      
+    
 }
 
 // Esperar hasta que el contenido del DOM (estructura HTML) esté completamente cargado
@@ -126,9 +142,12 @@ document.addEventListener("DOMContentLoaded", () => {
         clearInputs();
         mostrarProductos(data)
       });
+      searchInputProducto.addEventListener('input', () => {
+        filtrarbusqueda(data);
+      });
     })
     // En caso de error en la solicitud o en el manejo de datos, mostrar un mensaje de error en la consola
     .catch((error) => {
       console.error("Error en la solicitud fetch:", error);
-    });
+    })
 });
