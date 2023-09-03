@@ -3,24 +3,24 @@
   function showProductsList(productsArray) {
     searchResultsProducto.innerHTML = ''; // Limpiar contenido previo
     
-    productsArray.forEach(product => {
+    productsArray.forEach(item => {
       const productDiv = document.createElement('div');
       
       const productHTML = `
         <div class="producto">
-          <img class="imagenCars" src=${product.image}>
+          <img class="imagenCars" src=${item.image}>
           <div class="divTexto">
             <div class="divNombre">
-              <p class="nombre">${product.name}</p>
+              <p class="nombre">${item.name}</p>
             </div>
             <div class="divDescripcion">
-              <p class="descripcion">${product.description}</p>
+              <p class="descripcion">${item.description}</p>
             </div>
             <div class="divPrecio">
-              <p class="precio">Precio: ${product.currency} ${product.cost}</p>
+              <p class="precio">Precio: ${item.currency} ${item.cost}</p>
             </div>
             <div class="divVendidos">
-              <p class="vendidos">Vendidos: ${product.soldCount}</p>
+              <p class="vendidos">Vendidos: ${item.soldCount}</p>
             </div>
           </div>
         </div>
@@ -35,18 +35,18 @@
   const searchInputProducto = document.getElementById('search-input-producto');
   const searchResultsProducto = document.getElementById('search-results-producto');
   
-  searchInputProducto.addEventListener('input', filtrar);
+  searchInputProducto.addEventListener('input', filtrarbusqueda);
 
-  function filtrar() {
+  function filtrarbusqueda() {
     let searchTextProducto = searchInputProducto.value.toLowerCase();
     
     fetch("https://japceibal.github.io/emercado-api/cats_products/" + localStorage.getItem("catID") + ".json")
       .then(response => response.json())
       .then(data => {
-        let filteredProducts = data.products.filter(product => {
+        let filteredProducts = data.products.filter(item => {
   
-        const nombreLowerCase = product.name.toLowerCase(); /*para busqueda por nombre*/
-        const descripcionLowerCase = product.description.toLowerCase(); /*para busqueda por descripcion*/
+        const nombreLowerCase = item.name.toLowerCase(); /*para busqueda por nombre*/
+        const descripcionLowerCase = item.description.toLowerCase(); /*para busqueda por descripcion*/
         return nombreLowerCase.includes(searchTextProducto) || descripcionLowerCase.includes(searchTextProducto);
     });
 
@@ -60,4 +60,4 @@
         console.error('Error al obtener los productos:', error);
       });
   };
-  document.addEventListener("DOMContentLoaded", filtrar);
+  document.addEventListener("DOMContentLoaded", filtrarbusqueda);
