@@ -19,8 +19,8 @@ function mostrarProductos(data) {
   // Iterar a través de los elementos en el arreglo "products" dentro de los datos
   data.products.forEach((item) => {
     // Generar el fragmento de HTML para mostrar la información del producto
-    listaHtml += `<div class="producto" >
-     <img class="imagenCars" src=${item.image}>
+    listaHtml += `<div class="producto">
+     <img class="imagenProductos" src=${item.image}>
 
         <div class="divTexto">
             <div class="divNombre">
@@ -43,23 +43,18 @@ function mostrarProductos(data) {
    <hr>
       `;
   });
-
-
-
-
   
-  // Obtener el primer elemento con la clase "lista-cars" que fue añadida en products.html
-  const listaCars = document.getElementsByClassName("lista-cars")[0];
+  // Obtener el primer elemento con la clase "lista-productos" que fue añadida en products.html
+  const listaProductos = document.getElementsByClassName("lista-productos")[0];
 
-  // Asignar el HTML generado a la estructura con la clase "lista-cars"
-  listaCars.innerHTML = listaHtml;
-}
+  // Asignar el HTML generado a la estructura con la clase "lista-productos"
+  listaProductos.innerHTML = listaHtml;
 
-//Entrega Nº3
-//Función para redirigir el click
-function setIrProductInfo(id) {
-  localStorage.setItem("productInfoID", id);
-  window.location = "product-info.html";
+  // Agregar el evento click al elemento div
+  listaProductos.addEventListener("click", (event) => {
+    // Redireccionar a product-info.html
+    window.location.href = "product-info.html";
+  });
 }
 
 // funciones para ordenar ascendente
@@ -162,7 +157,4 @@ document.addEventListener("DOMContentLoaded", () => {
     .catch((error) => {
       console.error("Error en la solicitud fetch:", error);
     })
-
-    //Llamamos a la función para que redirija
-    setIrProductInfo();
 });
