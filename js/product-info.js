@@ -1,56 +1,103 @@
-document.addEventListener("DOMContentLoaded", () => {
-    // Código para obtener la categoría de cada producto en función de la que se elija
-    const productID = localStorage.getItem("id");
-    const productsInfo = `https://japceibal.github.io/emercado-api/products/${productID}.json`;
-    let listaInfo = "";
+/* 
+CONSIGNA 2
+recuperar los id del localstorage anterior en products.js y hacer fetch al json de product-info en función a cada id de cada producto 
+*/
+// document.addEventListener("DOMContentLoaded", function (){
+const recuperarId = localStorage.getItem("productoSeleccionado");
+const urlRecuperacion = `https://japceibal.github.io/emercado-api/products/${recuperarId}.json`;
+const infoEnContenedor = document.getElementsByClassName('container');
+// mostrarEnContenedor();
+
+// function mostrarEnContenedor(){
+//     fetch(urlRecuperacion)
+//     .then((response) => response.json())
+//     .then((data) => {
+//         console.log("sufrimiento 1");
+//       mostrarInner(data.collection.items);
+//     })
+//     .catch((error) => {
+//       console.error("Error al realizar la petición:", error);
+//       console.log("sufrimiento 2");
+//     });
+// };
+
+//     function mostrarInner(items) {
+//         infoEnContenedor.innerHTML = "";
+
+//         const nombre = item.links[0].name;
+//         const descripcion = item.data[0].description;
+//         const costo = item.data[0].cost;
+//         const moneda = item.data[0].currency;
+//         const cantidadVendidos = item.data[0].soldCount;
+//         // aca van las imagenes
+
+//         const itemsObtenidos = document.createElement("div");
+//         itemsObtenidos.classList.add("items-resultantes");
+//         itemsObtenidos.innerHTML = `
+//         <h3>${nombre}</h3>
+//         <p>${descripcion}</p>
+//         <p>${moneda} Precio: ${costo}</p>
+//         <p>Cantidad de vendidos: ${cantidadVendidos}</p>
+//         <img src="${imageUrl}" alt="${title}">
+//         `;
+
+//         infoEnContenedor.appendChild(itemsObtenidos);
+
+//     }
+// });
 
 
-    function mostrarInfo(data){
-    const obtenerProducto = document.getElementsByClassName("producto");
-    obtenerProducto.addEventListener("click", (item)=>{
-        listaInfo = `<div class="productoinfo">
-     <img class="imagenCars" src=${item.images[0]}>
+//  CÓDIGO DEL BARDO GUGLE
+document.addEventListener("DOMContentLoaded", function (){
+    data.products.forEach((item) => {
+      // Recuperar el identificador del producto
+      const idProducto = item.id;
+  
+      // Guardar el identificador del producto en el almacenamiento local
+      localStorage.setItem("productoSeleccionado", idProducto);
+  
+      // Mostrar la información del producto
+      mostrarEnContenedor();
+    });
+  });
+  
+  function mostrarEnContenedor(){
+      // Cambiar la URL de la solicitud HTTP
+      const urlRecuperacion = `https://japceibal.github.io/emercado-api/products/${localStorage.getItem("productoSeleccionado")}.json`;
+    
+      // Mostrar la información del producto
+      fetch(urlRecuperacion)
+      .then((response) => response.json())
+      .then((data) => {
+        mostrarInner(data.collection.items);
+      })
+      .catch((error) => {
+        console.error("Error al realizar la petición:", error);
+      });
+  };
+  
+  function mostrarInner(items) {
+      infoEnContenedor.innerHTML = "";
 
-        <div class="divTexto">
-            <div class="divNombre">
-                <p class="nombre">${item.name}</p>
-            </div>
-
-            <div class="divDescripcion">
-                <p class="descripcion">${item.description}</p>
-            </div>
-
-            <div class="divPrecio">
-                <p class="precio">Precio: ${item.currency} ${item.cost}</p>
-            </div>
-
-            <div class="divVendidos">
-                <p class="vendidos">Vendidos: ${item.soldCount}</p>
-            </div>
-        </div>
-     <img class="imagenCars" src=${item.images[1]}   
-     <img class="imagenCars" src=${item.images[2]}
-     <img class="imagenCars" src=${item.images[3]}
-   </div>
-   <hr>
-      `;
-
-    })
-}
-
-    fetch(productsInfo)
-    // Cuando la respuesta de la solicitud se recibe, la convertimos a formato JSON
-    .then((response) => response.json())
-    // Después de convertir la respuesta a JSON, llamamos a la función mostrarProductos con los datos
-    .then((data) => {
-      // Mostrar productos por defecto al cargar la página
-      mostrarInfo(data);
-
-});
-
-
-
-
-
-});
-
+      // Definir las constantes
+      const nombre = item.links[0].name;
+      const descripcion = item.data[0].description;
+      const costo = item.data[0].cost;
+      const moneda = item.data[0].currency;
+      const cantidadVendidos = item.data[0].soldCount;
+  
+      // Mostrar la información del producto
+      const itemsObtenidos = document.createElement("div");
+      itemsObtenidos.classList.add("items-resultantes");
+      itemsObtenidos.innerHTML = `
+          <h3>${nombre}</h3>
+          <p>${descripcion}</p>
+          <p>${moneda} Precio: ${costo}</p>
+          <p>Cantidad de vendidos: ${cantidadVendidos}</p>
+          <img src="${imageUrl}" alt="${title}">
+          `;
+  
+      infoEnContenedor.appendChild(itemsObtenidos);
+  };
+  
+  
