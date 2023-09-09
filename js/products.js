@@ -43,17 +43,27 @@ function mostrarProductos(data) {
    <hr>
       `;
   });
-  
+
   // Obtener el primer elemento con la clase "lista-productos" que fue añadida en products.html
   const listaProductos = document.getElementsByClassName("lista-productos")[0];
 
   // Asignar el HTML generado a la estructura con la clase "lista-productos"
   listaProductos.innerHTML = listaHtml;
 
-  // Agregar el evento click al elemento div
-  listaProductos.addEventListener("click", (event) => {
-    // Redireccionar a product-info.html
-    window.location.href = "product-info.html";
+  // Almacenar en el localStorage el identificador de un producto
+  function guardarProductoSeleccionado(productoId) {
+    localStorage.setItem('productoSeleccionado', productoId);
+  }
+
+  const productosDivs = document.querySelectorAll('.producto');
+
+  productosDivs.forEach((productoDiv, index) => {
+    productoDiv.addEventListener('click', () => {
+      // Al hacer clic en un div de producto, index se refiere al índice del producto seleccionado
+      guardarProductoSeleccionado(index);
+      // Luego, redirige al usuario a product-info.html
+      window.location.href = 'product-info.html';
+    });
   });
 }
 
@@ -95,18 +105,18 @@ function clearInputs() {
 
 function filtrarbusqueda(data) {
   let searchTextProducto = searchInputProducto.value.toLowerCase();
-  
+
   let filteredProductsBusqueda = data.products.filter(item => {
-      const nombreLowerCase = item.name.toLowerCase(); /*para búsqueda por nombre*/
-      const descripcionLowerCase = item.description.toLowerCase(); /*para búsqueda por descripción*/
-      return nombreLowerCase.includes(searchTextProducto) || descripcionLowerCase.includes(searchTextProducto);
-    });
-    mostrarProductos({ products: filteredProductsBusqueda });
-    // if (filteredProductsBusqueda.length === 0) {
-    //   searchResultsProducto.innerHTML = '<p>No se encontraron resultados</p>';
-    // } else {
-      
-    
+    const nombreLowerCase = item.name.toLowerCase(); /*para búsqueda por nombre*/
+    const descripcionLowerCase = item.description.toLowerCase(); /*para búsqueda por descripción*/
+    return nombreLowerCase.includes(searchTextProducto) || descripcionLowerCase.includes(searchTextProducto);
+  });
+  mostrarProductos({ products: filteredProductsBusqueda });
+  // if (filteredProductsBusqueda.length === 0) {
+  //   searchResultsProducto.innerHTML = '<p>No se encontraron resultados</p>';
+  // } else {
+
+
 }
 
 // Esperar hasta que el contenido del DOM (estructura HTML) esté completamente cargado
@@ -151,7 +161,7 @@ document.addEventListener("DOMContentLoaded", () => {
       searchInputProducto.addEventListener('input', () => {
         filtrarbusqueda(data);
       });
-     
+
     })
     // En caso de error en la solicitud o en el manejo de datos, mostrar un mensaje de error en la consola
     .catch((error) => {
