@@ -11,12 +11,11 @@ document.addEventListener('DOMContentLoaded', function () {
         // Construir el HTML para mostrar los detalles del producto
         const detalleProductoHTML = `
           <h1>${product.name}</h1>
-          <img src="${product.image}" alt="${product.name}">
+          <img src="${product.images[3]}" alt="${product.name}">
           <p>${product.description}</p>
           <p>Precio: ${product.currency} ${product.cost}</p>
           <p>Vendidos: ${product.soldCount}</p>
-          <!-- Agrega aquí cualquier otra información que desees mostrar -->
-        `;
+          `;
 
         // Mostrar los detalles del producto en la página
         const detalleProductoContainer = document.getElementById('detalle-producto');
