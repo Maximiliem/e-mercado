@@ -43,13 +43,13 @@ document.addEventListener("DOMContentLoaded", function () {
             console.log(comments);
 
             for (const comment of comments) {
-              const comentarioHTML = `
-          <div class="container-comentarios">
+              const commentHTML = `
+          <div class="comments-container">
               <div>
                 <div>
-                  <div class="comentarios-usuario">
+                  <div class="user-comment">
                     <div>
-                    <p class="nombre-usuario">${comment.user.toUpperCase()}</p>
+                    <p class="user-name">${comment.user.toUpperCase()}</p>
                     </div>
                     <div>
                     <p>${comment.dateTime}</p> 
@@ -77,11 +77,11 @@ document.addEventListener("DOMContentLoaded", function () {
               </div
           </div>`;
 
-              const comentarios = document.getElementById(
-                "comentario-producto"
+              const comments = document.getElementById(
+                "product-comment"
               );
 
-              comentarios.innerHTML = comentarios.innerHTML + comentarioHTML;
+              comments.innerHTML += commentHTML;
             }
           });
       });
