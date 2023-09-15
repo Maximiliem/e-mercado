@@ -34,6 +34,44 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         /*ENTREGA Nª3 / CONSIGNA-3*/
         //crear los comentarios de los productos
+
+        function showComment(comment) {
+          const comentarioHTML = `
+    <div class="container-comentarios">
+        <div>
+          <div>
+            <div class="comentarios-usuario">
+              <div>
+              <p class="nombre-usuario">${comment.user.toUpperCase()}</p>
+              </div>
+              <div>
+              <p>${comment.dateTime}</p> 
+              </div>
+            </div>
+            <span class="fa fa-star ${comment.score >= 1 && "checked"
+            }"></span>
+            <span class="fa fa-star ${comment.score >= 2 && "checked"
+            }"></span>
+            <span class="fa fa-star ${comment.score >= 3 && "checked"
+            }"></span>
+            <span class="fa fa-star ${comment.score >= 4 && "checked"
+            }"></span>
+            <span class="fa fa-star ${comment.score >= 5 && "checked"
+            }"></span>
+          </div>
+          <div>
+            <p>${comment.description}</p>
+          </div>
+        </div
+    </div>`;
+
+          const comentarios = document.getElementById(
+            "comentario-producto"
+          );
+
+          comentarios.innerHTML += comentarioHTML;
+        };
+
         //realizo la solicitud fetch
         fetch(
           `https://japceibal.github.io/emercado-api/products_comments/${productId}.json`
@@ -43,46 +81,18 @@ document.addEventListener("DOMContentLoaded", function () {
             console.log(comments);
 
             for (const comment of comments) {
-              const comentarioHTML = `
-          <div class="container-comentarios">
-              <div>
-                <div>
-                  <div class="comentarios-usuario">
-                    <div>
-                    <p class="nombre-usuario">${comment.user.toUpperCase()}</p>
-                    </div>
-                    <div>
-                    <p>${comment.dateTime}</p> 
-                    </div>
-                  </div>
-                  <span class="fa fa-star ${
-                    comment.score >= 1 && "checked"
-                  }"></span>
-                  <span class="fa fa-star ${
-                    comment.score >= 2 && "checked"
-                  }"></span>
-                  <span class="fa fa-star ${
-                    comment.score >= 3 && "checked"
-                  }"></span>
-                  <span class="fa fa-star ${
-                    comment.score >= 4 && "checked"
-                  }"></span>
-                  <span class="fa fa-star ${
-                    comment.score >= 5 && "checked"
-                  }"></span>
-                </div>
-                <div>
-                  <p>${comment.description}</p>
-                </div>
-              </div
-          </div>`;
+              showComment(comment);
+            };
 
-              const comentarios = document.getElementById(
-                "comentario-producto"
-              );
 
-              comentarios.innerHTML = comentarios.innerHTML + comentarioHTML;
-            }
+            const buttonComment = document.getElementById('agregar');
+            buttonComment.addEventListener('click', () => {
+              const newComment = document.getElementById('commentId').value;
+              console.log(newComment);
+              let userComment = { description: newComment, user: "pepito", dateTime: new Date(), score: 3 };
+              showComment(userComment);
+            })
+
           });
       });
   }
