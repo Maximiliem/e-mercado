@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
           // mostrar las imágenes del producto en la página
           const imagenProductoContainer =
             document.getElementById("detalle-producto");
-          imagenProductoContainer.appendChild(img);
+          imagenProductoContainer.appendChild(img).className = "col-12 col-md-6 col-lg-5 m-1";
         }
         /*ENTREGA Nª3 / CONSIGNA-3*/
         //crear los comentarios de los productos
@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
               <p class="nombre-usuario">${comment.user.toUpperCase()}</p>
               </div>
               <div>
-              <p>${comment.dateTime}</p> 
+              <p>${new Date(comment.dateTime).toLocaleString()}</p> 
               </div>
             </div>
             <span class="fa fa-star ${comment.score >= 1 && "checked"
@@ -84,15 +84,17 @@ document.addEventListener("DOMContentLoaded", function () {
               showComment(comment);
             };
 
-
+            
             const buttonComment = document.getElementById('agregar');
+            let commentsList = [];
             buttonComment.addEventListener('click', () => {
               
               const newScore = document.getElementById("commentScore").value;
               const newComment = document.getElementById('commentId').value;
-              let userComment = { description: newComment, user: "pepito", dateTime: new Date(), score: newScore };
+              let userComment = { description: newComment, user:localStorage.getItem('email'), dateTime: new Date(), score: newScore };
+          
               function agregarLista(){
-                let commentsList = [];
+              
                 commentsList.push(userComment);
                 console.log(commentsList);
               }
