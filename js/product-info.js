@@ -87,11 +87,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
             const buttonComment = document.getElementById('agregar');
             buttonComment.addEventListener('click', () => {
+              
+              const newScore = document.getElementById("commentScore").value;
               const newComment = document.getElementById('commentId').value;
-              console.log(newComment);
-              let userComment = { description: newComment, user: "pepito", dateTime: new Date(), score: 3 };
+              let userComment = { description: newComment, user: "pepito", dateTime: new Date(), score: newScore };
+              function agregarLista(){
+                let commentsList = [];
+                commentsList.push(userComment);
+                console.log(commentsList);
+              }
+              agregarLista();
               showComment(userComment);
             })
+            
 
           });
       });
