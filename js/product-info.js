@@ -2,7 +2,7 @@
 
 document.addEventListener("DOMContentLoaded", function () {
   const productId = localStorage.getItem("ID_del_producto");
-
+  let commentsList = [];
   if (productId) {
     // Realizar la solicitud para obtener los detalles del producto
     fetch(`https://japceibal.github.io/emercado-api/products/${productId}.json`)
@@ -32,6 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
             document.getElementById("detalle-producto");
           imagenProductoContainer.appendChild(img).className = "col-12 col-md-6 col-lg-5 m-1";
         }
+
         /*ENTREGA Nª3 / CONSIGNA-3*/
         //crear los comentarios de los productos
 
@@ -64,13 +65,10 @@ document.addEventListener("DOMContentLoaded", function () {
           </div>
         </div
     </div>`;
-
-          const comentarios = document.getElementById(
-            "comentario-producto"
-          );
-
+          const comentarios = document.getElementById("comentario-producto");
+          
           comentarios.innerHTML += comentarioHTML;
-        };
+        }
 
         //realizo la solicitud fetch
         fetch(
@@ -78,7 +76,7 @@ document.addEventListener("DOMContentLoaded", function () {
         )
           .then((response) => response.json())
           .then((comments) => {
-            console.log(comments);
+            
 
             for (const comment of comments) {
               showComment(comment);
@@ -86,21 +84,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
             
             const buttonComment = document.getElementById('agregar');
-            let commentsList = [];
+            
             buttonComment.addEventListener('click', () => {
               
               const newScore = document.getElementById("commentScore").value;
               const newComment = document.getElementById('commentId').value;
-              let userComment = { description: newComment, user:localStorage.getItem('email'), dateTime: new Date(), score: newScore };
+              const userComment = { description: newComment, user:localStorage.getItem('email'), dateTime: new Date(), score: newScore };
           
-              function agregarLista(){
+         
               
                 commentsList.push(userComment);
-                console.log(commentsList);
-              }
-              agregarLista();
-              showComment(userComment);
-            })
+                
+                showComment(userComment);
+
+                document.getElementById("commentScore").value = "";
+                document.getElementById('commentId').value = "";
+            });
             
 
           });

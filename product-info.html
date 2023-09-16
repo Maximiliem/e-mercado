@@ -48,11 +48,9 @@
    <div id="comentario-producto">
         <!-- Agrega más elementos para mostrar otros detalles del producto --> 
         <div class="newComment">
-          <h5>¡Queremos saber tu opinión!</h5>
+          <h5 id="opinion">¡Queremos saber tu opinión!</h5>
           <br>   
-          <input type="text" class="comment-control" id="commentId" placeholder="Añade un comentario...">
-          <br>
-          <label for="score">Calificación:</label>
+           <label class=label1 for="score">Calificación:</label>
             <select id="commentScore" name="score">
               <option value="elegir">Elige una opción</option>
               <option value="1">1</option>
@@ -61,8 +59,10 @@
               <option value="4">4</option>
               <option value="5">5</option>
             </select>
-          <div class="d-grid">
+            <br>
+            <textarea type="text" rows="3" class="comment-control" id="commentId" placeholder="Añade un comentario..."></textarea>
             <button type="button" class="btn btn-primary my-3" id="agregar">Enviar</button>
+            <br>
           </div>
         </div>
       </div>
