@@ -22,15 +22,28 @@ document.addEventListener("DOMContentLoaded", function () {
         detalleProductoContainer.innerHTML = detalleProductoHTML;
 
         // hacemos un bucle for-of para poder iterar el array de las imágenes correctamente
+      // Selecciona el contenedor del carrusel
+const carruselContainer = document.querySelector('.carousel-inner');
+
+// Variable para rastrear el índice del elemento activo
+let indiceActivo = 0;
         for (const image of product.images) {
-          const img = document.createElement("img");
+          const carruselItem = document.createElement('div');
+          carruselItem.classList.add('carousel-item');
+        
+          if (indiceActivo === 0) {
+            carruselItem.classList.add('active'); // La primera imagen debe ser activa
+          }
+        
+          const img = document.createElement('img');
           img.src = image;
           img.alt = product.name;
-
-          // mostrar las imágenes del producto en la página
-          const imagenProductoContainer =
-            document.getElementById("detalle-producto");
-          imagenProductoContainer.appendChild(img).className = "col-12 col-md-6 col-lg-5 m-1 img-thumbnail img-fluid border border-secondary";
+          img.classList.add('d-block', 'w-100'); // Clases de Bootstrap para la imagen
+        
+          carruselItem.appendChild(img);
+          carruselContainer.appendChild(carruselItem);
+        
+          indiceActivo++; // Incrementa el índice activo para la siguiente imagen
         }
         /*ENTREGA Nª3 / CONSIGNA-3*/
         //crear los comentarios de los productos
