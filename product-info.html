@@ -10,7 +10,9 @@
   <link href="css/font-awesome.min.css" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
+  <link href="css/product-info.css" rel="stylesheet">
   <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -39,13 +41,31 @@
   </nav>
   <main>
     <div class="container">
-      <div id="detalles-producto">
-        <h1 id="nombre-producto"></h1>
-        <p id="descripcion-producto"></p>
-        <p id="precio-producto"></p>
-        <!-- Agrega más elementos para mostrar otros detalles del producto -->
-      </div>      
-    </div>
+   <div class="info-producto" id="detalle-producto">
+
+   </div>
+   <br>
+   <div id="comentario-producto">
+        <!-- Agrega más elementos para mostrar otros detalles del producto --> 
+        <div class="newComment">
+          <h5>¡Queremos saber tu opinión!</h5>
+          <br>   
+          <input type="text" class="comment-control" id="commentId" placeholder="Añade un comentario...">
+          <br>
+          <label for="score">Calificación:</label>
+            <select id="commentScore" name="score">
+              <option value="elegir">Elige una opción</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          <div class="d-grid">
+            <button type="button" class="btn btn-primary my-3" id="agregar">Enviar</button>
+          </div>
+        </div>
+      </div>
   </main>
   <footer class="text-muted">
     <div class="container">

@@ -19,7 +19,7 @@ function mostrarProductos(data) {
   // Iterar a través de los elementos en el arreglo "products" dentro de los datos
   data.products.forEach((item) => {
     // Generar el fragmento de HTML para mostrar la información del producto
-    listaHtml += `<div class="producto">
+    listaHtml += `<div class="producto" data-id="${item.id}">
      <img class="imagenProductos" src=${item.image}>
 
         <div class="divTexto">
@@ -47,26 +47,30 @@ function mostrarProductos(data) {
   // Obtener el primer elemento con la clase "lista-productos" que fue añadida en products.html
   const listaProductos = document.getElementsByClassName("lista-productos")[0];
 
-  // Asignar el HTML generado a la estructura con la clase "lista-productos"
-  listaProductos.innerHTML = listaHtml;
+// Asignar el HTML generado a la estructura con la clase "lista-productos"
+listaProductos.innerHTML = listaHtml;
 
-  // Almacenar en el localStorage el identificador de un producto
-  function guardarProductoSeleccionado(productoId) {
-    localStorage.setItem('productoSeleccionado', productoId);
+/////////ENTREGA Nª3 CONSIGNA-1/////////
+
+// Almacenar en el localStorage el identificador de un producto
+  function guardarIdProducto(id) {
+    localStorage.setItem('ID_del_producto', id);
   }
 
   const productosDivs = document.querySelectorAll('.producto');
 
   productosDivs.forEach((productoDiv) => {
     productoDiv.addEventListener('click', () => {
-     
-      // Al hacer clic en un div de producto, obtener el id del producto
-      const productoId = productoDiv.getAttribute('producto');
-      guardarProductoSeleccionado(productoId);
+      // Acá almaceno en una constante el id del producto
+      const dataId = productoDiv.getAttribute('data-id');
+
+      // Llamar a la función para guardar el ID en localStorage
+      guardarIdProducto(dataId);
       // Luego, redirige al usuario a product-info.html
       window.location.href = 'product-info.html';
     });
   });
+  console.log(dataId);
 }
 
 // funciones para ordenar ascendente

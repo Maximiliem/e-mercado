@@ -1,103 +1,109 @@
-/* 
-CONSIGNA 2
-recuperar los id del localstorage anterior en products.js y hacer fetch al json de product-info en función a cada id de cada producto 
-*/
-// document.addEventListener("DOMContentLoaded", function (){
-const recuperarId = localStorage.getItem("productoSeleccionado");
-const urlRecuperacion = `https://japceibal.github.io/emercado-api/products/${recuperarId}.json`;
-const infoEnContenedor = document.getElementsByClassName('container');
-// mostrarEnContenedor();
+/*ENTREGA Nª3 / CONSIGNA-2*/
 
-// function mostrarEnContenedor(){
-//     fetch(urlRecuperacion)
-//     .then((response) => response.json())
-//     .then((data) => {
-//         console.log("sufrimiento 1");
-//       mostrarInner(data.collection.items);
-//     })
-//     .catch((error) => {
-//       console.error("Error al realizar la petición:", error);
-//       console.log("sufrimiento 2");
-//     });
-// };
+document.addEventListener("DOMContentLoaded", function () {
+  const productId = localStorage.getItem("ID_del_producto");
 
-//     function mostrarInner(items) {
-//         infoEnContenedor.innerHTML = "";
-
-//         const nombre = item.links[0].name;
-//         const descripcion = item.data[0].description;
-//         const costo = item.data[0].cost;
-//         const moneda = item.data[0].currency;
-//         const cantidadVendidos = item.data[0].soldCount;
-//         // aca van las imagenes
-
-//         const itemsObtenidos = document.createElement("div");
-//         itemsObtenidos.classList.add("items-resultantes");
-//         itemsObtenidos.innerHTML = `
-//         <h3>${nombre}</h3>
-//         <p>${descripcion}</p>
-//         <p>${moneda} Precio: ${costo}</p>
-//         <p>Cantidad de vendidos: ${cantidadVendidos}</p>
-//         <img src="${imageUrl}" alt="${title}">
-//         `;
-
-//         infoEnContenedor.appendChild(itemsObtenidos);
-
-//     }
-// });
-
-
-//  CÓDIGO DEL BARDO GUGLE
-document.addEventListener("DOMContentLoaded", function (){
-    data.products.forEach((item) => {
-      // Recuperar el identificador del producto
-      const idProducto = item.id;
-  
-      // Guardar el identificador del producto en el almacenamiento local
-      localStorage.setItem("productoSeleccionado", idProducto);
-  
-      // Mostrar la información del producto
-      mostrarEnContenedor();
-    });
-  });
-  
-  function mostrarEnContenedor(){
-      // Cambiar la URL de la solicitud HTTP
-      const urlRecuperacion = `https://japceibal.github.io/emercado-api/products/${localStorage.getItem("productoSeleccionado")}.json`;
-    
-      // Mostrar la información del producto
-      fetch(urlRecuperacion)
+  if (productId) {
+    // Realizar la solicitud para obtener los detalles del producto
+    fetch(`https://japceibal.github.io/emercado-api/products/${productId}.json`)
       .then((response) => response.json())
-      .then((data) => {
-        mostrarInner(data.collection.items);
-      })
-      .catch((error) => {
-        console.error("Error al realizar la petición:", error);
-      });
-  };
-  
-  function mostrarInner(items) {
-      infoEnContenedor.innerHTML = "";
-
-      // Definir las constantes
-      const nombre = item.links[0].name;
-      const descripcion = item.data[0].description;
-      const costo = item.data[0].cost;
-      const moneda = item.data[0].currency;
-      const cantidadVendidos = item.data[0].soldCount;
-  
-      // Mostrar la información del producto
-      const itemsObtenidos = document.createElement("div");
-      itemsObtenidos.classList.add("items-resultantes");
-      itemsObtenidos.innerHTML = `
-          <h3>${nombre}</h3>
-          <p>${descripcion}</p>
-          <p>${moneda} Precio: ${costo}</p>
-          <p>Cantidad de vendidos: ${cantidadVendidos}</p>
-          <img src="${imageUrl}" alt="${title}">
+      .then((product) => {
+        // Construir el HTML para mostrar los detalles del producto
+        const detalleProductoHTML = `
+          <h1>${product.name}</h1>
+          <p>${product.description}</p>
+          <p>Precio: ${product.currency} ${product.cost}</p>
+          <p>Vendidos: ${product.soldCount}</p>
           `;
-  
-      infoEnContenedor.appendChild(itemsObtenidos);
-  };
-  
-  
+
+        // Mostrar los detalles del producto en la página
+        const detalleProductoContainer =
+          document.getElementById("detalle-producto");
+        detalleProductoContainer.innerHTML = detalleProductoHTML;
+
+        // hacemos un bucle for-of para poder iterar el array de las imágenes correctamente
+        for (const image of product.images) {
+          const img = document.createElement("img");
+          img.src = image;
+          img.alt = product.name;
+
+          // mostrar las imágenes del producto en la página
+          const imagenProductoContainer =
+            document.getElementById("detalle-producto");
+          imagenProductoContainer.appendChild(img).className = "col-12 col-md-6 col-lg-5 m-1";
+        }
+        /*ENTREGA Nª3 / CONSIGNA-3*/
+        //crear los comentarios de los productos
+
+        function showComment(comment) {
+          const comentarioHTML = `
+    <div class="container-comentarios">
+        <div>
+          <div>
+            <div class="comentarios-usuario">
+              <div>
+              <p class="nombre-usuario">${comment.user.toUpperCase()}</p>
+              </div>
+              <div>
+              <p>${new Date(comment.dateTime).toLocaleString()}</p> 
+              </div>
+            </div>
+            <span class="fa fa-star ${comment.score >= 1 && "checked"
+            }"></span>
+            <span class="fa fa-star ${comment.score >= 2 && "checked"
+            }"></span>
+            <span class="fa fa-star ${comment.score >= 3 && "checked"
+            }"></span>
+            <span class="fa fa-star ${comment.score >= 4 && "checked"
+            }"></span>
+            <span class="fa fa-star ${comment.score >= 5 && "checked"
+            }"></span>
+          </div>
+          <div>
+            <p>${comment.description}</p>
+          </div>
+        </div
+    </div>`;
+
+          const comentarios = document.getElementById(
+            "comentario-producto"
+          );
+
+          comentarios.innerHTML += comentarioHTML;
+        };
+
+        //realizo la solicitud fetch
+        fetch(
+          `https://japceibal.github.io/emercado-api/products_comments/${productId}.json`
+        )
+          .then((response) => response.json())
+          .then((comments) => {
+            console.log(comments);
+
+            for (const comment of comments) {
+              showComment(comment);
+            };
+
+            
+            const buttonComment = document.getElementById('agregar');
+            let commentsList = [];
+            buttonComment.addEventListener('click', () => {
+              
+              const newScore = document.getElementById("commentScore").value;
+              const newComment = document.getElementById('commentId').value;
+              let userComment = { description: newComment, user:localStorage.getItem('email'), dateTime: new Date(), score: newScore };
+          
+              function agregarLista(){
+              
+                commentsList.push(userComment);
+                console.log(commentsList);
+              }
+              agregarLista();
+              showComment(userComment);
+            })
+            
+
+          });
+      });
+  }
+});
