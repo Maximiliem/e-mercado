@@ -57,10 +57,12 @@ function mostrarProductos(data) {
 
   const productosDivs = document.querySelectorAll('.producto');
 
-  productosDivs.forEach((productoDiv, index) => {
+  productosDivs.forEach((productoDiv) => {
     productoDiv.addEventListener('click', () => {
-      // Al hacer clic en un div de producto, index se refiere al índice del producto seleccionado
-      guardarProductoSeleccionado(index);
+     
+      // Al hacer clic en un div de producto, obtener el id del producto
+      const productoId = productoDiv.getAttribute('producto');
+      guardarProductoSeleccionado(productoId);
       // Luego, redirige al usuario a product-info.html
       window.location.href = 'product-info.html';
     });
