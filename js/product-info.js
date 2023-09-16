@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
           // mostrar las imágenes del producto en la página
           const imagenProductoContainer =
             document.getElementById("detalle-producto");
-          imagenProductoContainer.appendChild(img).className = "col-12 col-md-6 col-lg-5 m-1";
+          imagenProductoContainer.appendChild(img).className = "col-12 col-md-6 col-lg-5 m-1 img-thumbnail img-fluid border border-secondary";
         }
         /*ENTREGA Nª3 / CONSIGNA-3*/
         //crear los comentarios de los productos
