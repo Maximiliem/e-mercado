@@ -11,9 +11,9 @@ document.addEventListener("DOMContentLoaded", function () {
         // Construir el HTML para mostrar los detalles del producto
         const detalleProductoHTML = `
           <h1>${product.name}</h1>
-          <p>${product.description}</p>
-          <p>Precio: ${product.currency} ${product.cost}</p>
-          <p>Vendidos: ${product.soldCount}</p>
+          <p><span class="autos-negrita">Decripción:</span> ${product.description}</p>
+          <p><span class="autos-negrita">Precio:</span> ${product.currency} ${product.cost}</p>
+          <p><span class="autos-negrita">Vendidos:</span> ${product.soldCount}</p>
           `;
 
         // Mostrar los detalles del producto en la página
@@ -38,7 +38,7 @@ let indiceActivo = 0;
           const img = document.createElement('img');
           img.src = image;
           img.alt = product.name;
-          img.classList.add('d-block', 'w-100'); // Clases de Bootstrap para la imagen
+          img.classList.add('d-block', 'w-80', 'm-auto'); // Clases de Bootstrap para la imagen
         
           carruselItem.appendChild(img);
           carruselContainer.appendChild(carruselItem);
@@ -78,11 +78,11 @@ let indiceActivo = 0;
         </div
     </div>`;
 
-          const comentarios = document.getElementById(
-            "comentario-producto"
-          );
+          const comentarios = document.getElementById("comentario-producto");
+        
 
           comentarios.innerHTML += comentarioHTML;
+       
         };
 
         //realizo la solicitud fetch
@@ -99,20 +99,29 @@ let indiceActivo = 0;
 
             
             const buttonComment = document.getElementById('agregar');
-            let commentsList = [];
+            
             buttonComment.addEventListener('click', () => {
               
-              const newScore = document.getElementById("commentScore").value;
-              const newComment = document.getElementById('commentId').value;
+              let newScore = document.getElementById("commentScore").value;
+              let newComment = document.getElementById('commentId').value;
               let userComment = { description: newComment, user:localStorage.getItem('email'), dateTime: new Date(), score: newScore };
           
-              function agregarLista(){
-              
-                commentsList.push(userComment);
-                console.log(commentsList);
-              }
-              agregarLista();
-              showComment(userComment);
+            
+              function addComment() {
+
+               if (document.getElementById("commentScore").value === "elegir" || document.getElementById('commentId').value == "" ){
+                alert("Debes ingresar un comentario y una calificación");
+                
+               }else {
+                document.getElementById("commentScore").value = "elegir";
+                document.getElementById('commentId').value = "";
+                showComment(userComment);
+               }
+          
+              } 
+
+              addComment();
+             
             })
             
 

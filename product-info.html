@@ -50,35 +50,38 @@
     </div>
     <a class="carousel-control-prev" href="#imagen-carousel" role="button" data-bs-slide="prev">
       <span class="carousel-control-prev-icon visually-hidden" aria-hidden="true"></span>
-      <span ><img src="img/chevron-prev-svgrepo-com.svg" alt="previous"></span>
+      <span ><img src="img/double-alt-arrow-left.svg" alt="previous"></span>
     </a>
     <a class="carousel-control-next" href="#imagen-carousel" role="button" data-bs-slide="next">
       <span class="carousel-control-next-icon visually-hidden" aria-hidden="true"></span>
-      <span ><img src="img/chevron-next-svgrepo-com.svg" alt="next" ></span>
+      <span ><img src="img/double-alt-arrow-next.svg" alt="next" ></span>
     </a>
   </div>
    <br>
+
+   <div class="newComment">
+    <h5>¡Queremos saber tu opinión!</h5>
+    <br>   
+    <input type="text" class="comment-control" id="commentId" placeholder="Añade un comentario...">
+    <br>
+    <label for="score">Calificación:</label>
+      <select id="commentScore" name="score">
+        <option value="elegir">Elige una opción</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+    <div class="d-grid">
+      <button type="button" class="btn btn-primary my-3" id="agregar">Enviar</button>
+    </div>
+  </div>
+
    <div id="comentario-producto">
         <!-- Agrega más elementos para mostrar otros detalles del producto --> 
-        <div class="newComment">
-          <h5>¡Queremos saber tu opinión!</h5>
-          <br>   
-          <input type="text" class="comment-control" id="commentId" placeholder="Añade un comentario...">
-          <br>
-          <label for="score">Calificación:</label>
-            <select id="commentScore" name="score">
-              <option value="elegir">Elige una opción</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-            </select>
-          <div class="d-grid">
-            <button type="button" class="btn btn-primary my-3" id="agregar">Enviar</button>
-          </div>
-        </div>
-      </div>
+    </div>
+
   </main>
   <footer class="text-muted">
     <div class="container">
@@ -102,3 +105,4 @@
 </body>
 
 </html>
+
