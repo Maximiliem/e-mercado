@@ -70,7 +70,6 @@ listaProductos.innerHTML = listaHtml;
       window.location.href = 'product-info.html';
     });
   });
-
 }
 
 // funciones para ordenar ascendente

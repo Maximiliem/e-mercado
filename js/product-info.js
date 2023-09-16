@@ -1,8 +1,7 @@
 /*ENTREGA Nª3 / CONSIGNA-2*/
-
 document.addEventListener("DOMContentLoaded", function () {
   const productId = localStorage.getItem("ID_del_producto");
-
+  
   if (productId) {
     // Realizar la solicitud para obtener los detalles del producto
     fetch(`https://japceibal.github.io/emercado-api/products/${productId}.json`)
@@ -86,9 +85,7 @@ let indiceActivo = 0;
         };
 
         //realizo la solicitud fetch
-        fetch(
-          `https://japceibal.github.io/emercado-api/products_comments/${productId}.json`
-        )
+        fetch(`https://japceibal.github.io/emercado-api/products_comments/${productId}.json`)
           .then((response) => response.json())
           .then((comments) => {
             console.log(comments);
@@ -96,7 +93,6 @@ let indiceActivo = 0;
             for (const comment of comments) {
               showComment(comment);
             };
-
             
             const buttonComment = document.getElementById('agregar');
             
@@ -124,7 +120,6 @@ let indiceActivo = 0;
              
             })
             
-
           });
       });
   }
