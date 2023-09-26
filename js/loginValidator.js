@@ -73,12 +73,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     }
 
-    // Se crea una función que almacena la constante ya existente que generaba el login y se envita el doble loggeo
     // Agregar evento click al botón loginbutton
     function logbtn() {
         const loginbutton = document.getElementById("loginbutton");
         if (loginbutton) {
-            loginbutton.addEventListener('click', () => {
+            loginbutton.addEventListener('click', (event) => {
+                event.preventDefault(); // con este preventDefault se corrige el buggeo del doble inicio de sesión
                 // Verifica si el usuario ya está logueado
                 if (localStorage.getItem("logueado")) {
                     // Realiza el proceso de cierre de sesión
