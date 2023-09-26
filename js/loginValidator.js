@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Ocultar el mensaje Cambiando su estio 
         const elementoMostrarCorreo = document.getElementById("correoMensajeLogueado")
         //elementoMostrarCorreo.style,display = 'none';
-        elementoMostrarCorreo.parentNode.removeChild(elementoMostrarCorreo)
+        elementoMostrarCorreo.remove();
 
     }
 
@@ -78,7 +78,8 @@ document.addEventListener('DOMContentLoaded', () => {
     function logbtn() {
         const loginbutton = document.getElementById("loginbutton");
         if (loginbutton) {
-            loginbutton.addEventListener('click', () => {
+            loginbutton.addEventListener('click', (event) => {
+                event.preventDefault();
                 // Verifica si el usuario ya está logueado
                 if (localStorage.getItem("logueado")) {
                     // Realiza el proceso de cierre de sesión
