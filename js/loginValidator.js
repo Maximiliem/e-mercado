@@ -73,9 +73,10 @@ function login() {
 
   }
   
-
+    // Se crea una función que almacena la constante ya existente que generaba el login
     // Agregar evento click al botón loginbutton
-    const loginbutton = document.getElementById("loginbutton");
+    function logbtn(){
+        const loginbutton = document.getElementById("loginbutton");
     if (loginbutton) {
         loginbutton.addEventListener('click', () => {
             // Verifica si el usuario ya está logueado
@@ -87,6 +88,9 @@ function login() {
             }
         });
     }
+    };
+    logbtn();
+    
 
 
     // Agregar evento click al botón longinbuttonlabel (que ahora dice "Cerrar sesión")
