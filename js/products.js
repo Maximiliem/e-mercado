@@ -58,7 +58,6 @@ listaProductos.innerHTML = listaHtml;
   }
 
   const productosDivs = document.querySelectorAll('.producto');
-
   productosDivs.forEach((productoDiv) => {
     productoDiv.addEventListener('click', () => {
       // Acá almaceno en una constante el id del producto
