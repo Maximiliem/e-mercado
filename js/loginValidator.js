@@ -1,4 +1,26 @@
 document.addEventListener('DOMContentLoaded', () => {
+
+
+    // function updateButtonLabel(logueado) {
+    //     if (logueado) {
+    //         longinbuttonlabel.textContent = "Cerrar sesión";
+    //     } else {
+    //         longinbuttonlabel.textContent = "Iniciar sesión";
+    //     }
+    // }
+    const longinbuttonlabel = document.getElementById("longinbuttonlabel");
+    const containerPopup = document.querySelector('.container-popup');
+    const closeButtonX = document.getElementById("close-signIn");
+    longinbuttonlabel.addEventListener("click", function(){
+        if (containerPopup.style.display === "none") {
+            containerPopup.style.display = "block";
+        }
+    });
+    closeButtonX.addEventListener("click", function(){
+        if(containerPopup.style.display === "block"){
+            containerPopup.style.display = "none";
+        }
+    });
     const elementoMostrarCorreo = document.createElement('span');
     elementoMostrarCorreo.id = "correoMensajeLogueado";
 
@@ -44,11 +66,11 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.removeItem("password");
 
         // Actualiza la etiqueta del botón por inicio de sesión
-        const longinbuttonlabel = document.getElementById("longinbuttonlabel");
+      
         longinbuttonlabel.textContent = "Iniciar sesión";
 
         // Muestra nuevamente el formulario de inicio de sesión
-        const containerPopup = document.querySelector('.container-popup');
+      
         containerPopup.style.display = 'block';
 
         // Muestra nuevamente el botón de crear usuario 
@@ -61,7 +83,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const elementoMostrarCorreo = document.getElementById("correoMensajeLogueado");
         elementoMostrarCorreo.remove();
     }
-
     // Agregar evento click al botón loginbutton
     function logbtn() {
         const loginbutton = document.getElementById("loginbutton");
@@ -88,7 +109,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 logout();
             });
         }
-    }
+    };
+    endSession();
 
     // Verificar y actualizar la etiqueta del botón cuando la página carga
     // const userlogueado = localStorage.getItem("logueado");
