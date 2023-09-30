@@ -5,23 +5,24 @@ document.addEventListener("DOMContentLoaded", function(){
         const listElements = `
         <div class="center-login-box">
        
-        <button id="longinbuttonlabel" class="login-button" for="visible">Iniciar sesión</button>
+            <button id="longinbuttonlabel" class="login-button" for="visible">Iniciar sesión</button>
         
-        <div class="container-popup">
-            <label id="close-signIn" class="close-btn" title="close">X</label>
-            <div id="title-signIn"class="text">Iniciar sesión</div>
-            <form action="#">
-                <div class="data-login">
-                    <label>Email</label>
+            <div class="container-popup message-triangle">
+                <label id="close-signIn" class="close-btn" title="close">X</label>
+                <div id="title-signIn"class="text">Iniciar sesión</div>
+                <form action="#">
+                    <div class="data-login">
+                    <label>Email:</label>
                     <input class="input-signIn" id="useremail" type="text" placeholder="Escriba aqui su email" required>
                 </div>
                 <div class="data-login">
-                    <label>Contraseña</label>
+                    <label>Contraseña:</label>
                     <input class="input-signIn" id="userpassword" type="password" placeholder="Escriba aqui su contraseña" required>
                 </div>
+                
                 <div class="forgot-pass">
                     <a href="#">Olvidé mi contraseña</a>
-                </div>
+                </div> 
                 <div class="btn-login">
                     <div class="inner-login">
                         <button id="loginbutton" type="submit">Entrar</button>
@@ -32,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function(){
                 </div>
             </form>
         </div>
-</div>
+    </div>
         `
 
         getList.innerHTML = listElements;
@@ -40,3 +41,4 @@ document.addEventListener("DOMContentLoaded", function(){
 
     putContentOnList();
 })
+
