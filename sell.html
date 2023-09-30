@@ -29,9 +29,12 @@
           </li>
           <li class="nav-item">
             <a class="nav-link active" href="sell.html">Vender</a>
-          </li>
-          <li class="nav-item">
-          </li>
+            <li class="nav-item">
+              <a class="nav-link" id="botonCrearCuenta" href="login.html" onclick="openForm()">Crear cuenta</a>
+            </li>
+            <li class="nav-item" id="login-nav">
+              <!-- Acá se pone desde el DOM el contenido del login pop up -->
+            </li>
         </ul>
       </div>
     </div>
@@ -227,6 +230,7 @@
   <script src="js/init.js"></script>
   <script src="js/sell.js"></script>
   <script src="js/login-nav.js"></script>
+  <script src="js/loginValidator.js"></script>
 </body>
 
 </html>
