@@ -119,6 +119,7 @@ document.addEventListener("DOMContentLoaded", function () {
           });
       });
 
+
     //mostrar productos relacionados
     fetch(`https://japceibal.github.io/emercado-api/products/${productId}.json`)
       .then((response) => response.json())
@@ -127,7 +128,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const relatedProductsHTML = relatedProduct.relatedProducts
         .map(
           (product) => `
-          <div class="container-relatedproducts">
+          <div class="container-relatedproducts" id=${product.id}>
           <div>
           <img src="${product.image}" alt="${product.name}" class="image-relatedproducts"/>
           </div>
@@ -138,10 +139,15 @@ document.addEventListener("DOMContentLoaded", function () {
           )
           .join("")
           
-        const related = document.getElementById("related-products");
-
-        // Agrega el HTML generado al elemento "related"
-        related.innerHTML = relatedProductsHTML;
+          const related = document.getElementById("related-products");
+          related.innerHTML = relatedProductsHTML;
+          const rproducts = document.querySelectorAll(".container-relatedproducts")
+          rproducts.forEach((rproduct) => {
+            rproduct.addEventListener("click", () => {
+              localStorage.setItem('ID_del_producto', rproduct.id)
+              window.location.href = 'product-info.html';
+            })
+          })
       });
-  }
-});
+    }
+    })
