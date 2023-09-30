@@ -31,19 +31,13 @@ nav a {
   background: transparent;
   border-radius: 6px;
   cursor: pointer;
-  /* top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%); */
+  
 }
 
-.container-popup {
-  /* top: 50%;
-  left: 50%;
-  transform-origin: translate(-50%,-50%);
-  transform: center; */
+/*.container-popup {
+
   position: relative;
 }
-
 .login-button:active {
   transform: scale(0.98);
 }
@@ -62,7 +56,6 @@ nav a {
   outline: none;
   box-sizing: border-box;
   transition: all 0.1s ease-out;
-  /* transform: translate(-50%,-50%) scale(1); */
 
 }
 
@@ -70,7 +63,7 @@ nav a {
   display: none;
 }
 
-.container-popup {
+/*.container-popup {
   display: none;
   scale: 0;
   opacity: 0;
@@ -191,8 +184,8 @@ form .btn-login button {
   cursor: pointer;
   border-radius: 10px;
   /* overflow: visible;
-  transform: scale(0.98); */
-}
+  transform: scale(0.98); 
+}*/
 
 form .signup-link-login a {
   color: #3498db;
@@ -211,7 +204,7 @@ form .signup-link-login a:hover {
   to {
     border-bottom-width: 100%;
   }
-}
+}*/
 
 /*////////FIN BLOQE CSS POP UP LOG IN//////////// */
 

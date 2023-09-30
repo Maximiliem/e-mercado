@@ -1,0 +1,89 @@
+.center-login-box{
+
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    flex-direction: column;
+
+}
+
+.container-popup{
+
+    background-color:#fff;
+    position: absolute;
+    top: 42px;
+    text-align: center;
+    width: 300px;
+    padding: 30px 10px 20px 10px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 35px rgba(0, 0, 0, 0.6);
+    display: none;
+    z-index: 200; /*superpone el container-popup*/
+}
+
+.data-login{
+
+    text-align: left;
+}
+.container-popup .close-btn {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    cursor: pointer;
+    font-size: 18px;
+  }
+  
+  .container-popup .close-btn:hover {
+    color: #3498db;
+  }
+  
+  .container-popup .text {
+    font-size: 30px;
+    font-weight: 600;
+    text-align: center;
+  }
+  
+  .container-popup form {
+    margin-top: -20px;
+    transition: all 0.7s ease;
+  }
+  
+  .container-popup form .data-login {
+    width: 100%;
+    margin-top: 25px;
+  }
+
+.input-signIn{
+
+    width: 100%;
+}
+
+#loginbutton {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #333;
+    color: #fff;
+    padding: 6px 24px;
+    margin: 10px 0px;
+    border: 2px solid #333;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 100%;
+    
+  }
+
+#loginbutton:hover{
+
+background-color: #fff;
+color: #333;
+
+  }
+
+.signup-link-login{
+
+    text-align: center;
+  }
+
+
+

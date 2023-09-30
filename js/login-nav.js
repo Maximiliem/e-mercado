@@ -4,21 +4,20 @@ document.addEventListener("DOMContentLoaded", function(){
     function putContentOnList (){
         const listElements = `
         <div class="center-login-box">
-
-    <input type="checkbox" class="login-button-ckbox" id="show">
-        <label id="longinbuttonlabel" for="show" class="login-button">Iniciar sesión</label>
-
+       
+        <button id="longinbuttonlabel" class="login-button" for="visible">Iniciar sesión</button>
+        
         <div class="container-popup">
-            <label for="show" class="close-btn" title="close">X</label>
-            <div class="text">Iniciar sesión</div>
+            <label id="close-signIn" class="close-btn" title="close">X</label>
+            <div id="title-signIn"class="text">Iniciar sesión</div>
             <form action="#">
                 <div class="data-login">
                     <label>Email</label>
-                    <input id="useremail" type="text" placeholder="Escriba aqui su email" required>
+                    <input class="input-signIn" id="useremail" type="text" placeholder="Escriba aqui su email" required>
                 </div>
                 <div class="data-login">
                     <label>Contraseña</label>
-                    <input id="userpassword" type="password" placeholder="Escriba aqui su contraseña" required>
+                    <input class="input-signIn" id="userpassword" type="password" placeholder="Escriba aqui su contraseña" required>
                 </div>
                 <div class="forgot-pass">
                     <a href="#">Olvidé mi contraseña</a>
@@ -29,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function(){
                     </div>
                 </div>
                 <div class="signup-link-login">
-                    ¿No tienes usuario? <a href="login.html" target="_blank">Crea tu cuenta</a>
+                    ¿Aún no tienes cuenta? <a href="login.html" target="_blank"><br>Crea tu cuenta</a>
                 </div>
             </form>
         </div>
