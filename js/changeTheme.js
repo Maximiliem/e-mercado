@@ -1,8 +1,10 @@
 document.addEventListener("DOMContentLoaded", function(){
     // Función para activar el modo oscuro
+
 const darkMode = () => {
     document.querySelector("body").setAttribute("data-bs-theme", "dark");
     document.querySelector("#changeTheme i").setAttribute("class", "bi bi-sun");
+    document.querySelector(".jumbotron").style.backgroundImage = "url('../img/cover_back_black.png')";
     localStorage.setItem("theme", "dark");
 }
 
@@ -10,6 +12,7 @@ const darkMode = () => {
 const lightMode = () => {
     document.querySelector("body").setAttribute("data-bs-theme", "light");
     document.querySelector("#changeTheme i").setAttribute("class", "bi bi-moon");
+    document.querySelector(".jumbotron").style.backgroundImage = "url('../img/cover_back.png')";
     localStorage.setItem("theme", "light");
 }
 
