@@ -5,6 +5,9 @@ const darkMode = () => {
     document.querySelector("body").setAttribute("data-bs-theme", "dark");
     document.querySelector("#changeTheme i").setAttribute("class", "bi bi-sun");
     document.querySelector(".jumbotron").style.backgroundImage = "url('../img/cover_back_black.png')";
+    const album = document.querySelector(".album")
+    album.classList.remove("bg-light");
+    album.classList.add("bg-dark");
     localStorage.setItem("theme", "dark");
 }
 
@@ -13,6 +16,10 @@ const lightMode = () => {
     document.querySelector("body").setAttribute("data-bs-theme", "light");
     document.querySelector("#changeTheme i").setAttribute("class", "bi bi-moon");
     document.querySelector(".jumbotron").style.backgroundImage = "url('../img/cover_back.png')";
+    document.querySelector(".album")
+    const album = document.querySelector(".album")
+    album.classList.remove("bg-dark");
+    album.classList.add("bg-light");
     localStorage.setItem("theme", "light");
 }
 
