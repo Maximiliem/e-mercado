@@ -24,7 +24,7 @@ function mostrarProductos(data) {
 
         <div class="divTexto">
             <div class="divNombre">
-                <p class="nombre">${item.name}</p>
+                <p class="nombre mb-0">${item.name}</p>
             </div>
 
             <div class="divDescripcion">
