@@ -9,15 +9,15 @@ document.addEventListener("DOMContentLoaded", function(){
         
             <div class="container-popup">
                 <label id="close-signIn" class="close-btn" title="close">X</label>
-                <div id="title-signIn"class="text">Iniciar sesión</div>
+                <div id="title-signIn"class="text text-muted">Iniciar sesión</div>
                 <form action="#">
                     <div class="data-login">
                     <label>Email:</label>
-                    <input class="input-signIn" id="useremail" type="text" placeholder="Escriba aqui su email" required>
+                    <input class="input-signIn text-dark" id="useremail" type="text" placeholder="Escriba aqui su email" required>
                 </div>
                 <div class="data-login">
                     <label>Contraseña:</label>
-                    <input class="input-signIn" id="userpassword" type="password" placeholder="Escriba aqui su contraseña" required>
+                    <input class="input-signIn text-dark" id="userpassword" type="password" placeholder="Escriba aqui su contraseña" required>
                 </div>
                 
                 <div class="forgot-pass">

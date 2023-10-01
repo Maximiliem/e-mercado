@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function(){
     // Función para activar el modo oscuro
-
+const loginForm = document.querySelector(".container-popup"); // obtenemos el contenendor del popup
 const darkMode = () => {
     document.querySelector("body").setAttribute("data-bs-theme", "dark");
     document.querySelector("#changeTheme i").setAttribute("class", "bi bi-sun");
@@ -9,6 +9,7 @@ const darkMode = () => {
     album.classList.remove("bg-light");
     album.classList.add("bg-dark");
     localStorage.setItem("theme", "dark");
+    loginForm.style.backgroundColor = "#000000"; //se cambia el background color del popup a negro
 }
 
 // Función para activar el modo claro
@@ -21,6 +22,7 @@ const lightMode = () => {
     album.classList.remove("bg-dark");
     album.classList.add("bg-light");
     localStorage.setItem("theme", "light");
+    loginForm.style.backgroundColor = "#ffffff"; //se cambia el background color del popup a blanco
 }
 
 // Función para cambiar entre modos
