@@ -481,7 +481,6 @@ input:focus {
   font-size: 3.3vh;
   /* letter-spacing:0.5vw; */
   /*la variante que se me ocurre es disminuir el espacio, para darle un toque diferente a la letra*/
-  color: rgb(20, 20, 20);
   font-weight: 510;
 }
 
