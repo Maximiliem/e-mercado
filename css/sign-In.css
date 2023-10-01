@@ -18,7 +18,7 @@
     top: 42px;
     text-align: center;
     width: 330px;
-    height: 380px;
+    height: 420px;
     padding: 30px 20px 20px;
     border-radius: 5px;
     box-shadow: 5px 5px 35px rgba(0, 0, 0, 0.6);
@@ -98,7 +98,7 @@ color: #343a40;
   .input-signIn {
     border-radius: 0px;
     border: none;
-    border-bottom: 1.3px solid #222;
+    border-bottom: 1.3px solid #343a40;
     background: none;
     width: 100%;
     margin-top: 18px;
@@ -111,4 +111,11 @@ color: #343a40;
     border-bottom: 1.3px solid #3498db;
   }
 
+  .container-popup form a {
+    color: #3498db;
+  }
+  .container-popup form a:hover {
+    text-decoration: underline;
+  }
+  
 

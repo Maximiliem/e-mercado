@@ -187,24 +187,7 @@ form .btn-login button {
   transform: scale(0.98); 
 }*/
 
-form .signup-link-login a {
-  color: #3498db;
-  text-decoration: none;
-}
 
-form .signup-link-login a:hover {
-  text-decoration: underline;
-}
-
-@keyframes barfill {
-  from {
-    border-bottom-width: 1px;
-  }
-
-  to {
-    border-bottom-width: 100%;
-  }
-}*/
 
 /*////////FIN BLOQE CSS POP UP LOG IN//////////// */
 
