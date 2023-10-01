@@ -414,6 +414,10 @@ input:focus {
 }
 /* FINAL ESTILO FORM*/
 
+.text-muted{
+  text-align: center;
+}
+
 /* INICIO ESTILOS BUSCADOR PRODUCTOS */
 
 #search-container-producto {
