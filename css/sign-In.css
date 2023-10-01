@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap');
+
 .center-login-box{
 
     display: flex;
@@ -15,12 +17,14 @@
     position: absolute;
     top: 42px;
     text-align: center;
-    width: 300px;
-    padding: 30px 10px 20px 10px;
+    width: 330px;
+    height: 380px;
+    padding: 30px 20px 20px;
     border-radius: 5px;
     box-shadow: 5px 5px 35px rgba(0, 0, 0, 0.6);
     display: none;
     z-index: 200; /*superpone el container-popup*/
+    
 }
 
 .data-login{
@@ -37,17 +41,22 @@
   
   .container-popup .close-btn:hover {
     color: #3498db;
+
+  }
+  .close-btn::selection{
+
+    background-color: transparent;
   }
   
   .container-popup .text {
-    font-size: 30px;
+    font-size: 25px;
     font-weight: 600;
     text-align: center;
+    color: #343a40;
   }
   
   .container-popup form {
     margin-top: -20px;
-    transition: all 0.7s ease;
   }
   
   .container-popup form .data-login {
@@ -55,18 +64,14 @@
     margin-top: 25px;
   }
 
-.input-signIn{
-
-    width: 100%;
-}
 
 #loginbutton {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    background-color: #333;
+    font-family: 'Roboto', sans-serif;
+    background-color:#343a40;
     color: #fff;
     padding: 6px 24px;
     margin: 10px 0px;
-    border: 2px solid #333;
+    border: 2px solid#343a40;
     border-radius: 6px;
     cursor: pointer;
     width: 100%;
@@ -76,14 +81,34 @@
 #loginbutton:hover{
 
 background-color: #fff;
-color: #333;
+color: #343a40;
 
   }
 
-.signup-link-login{
+.container-popup form a:hover  {
+    text-decoration: underline;
+  }
+  
 
-    text-align: center;
+  .forgot-pass{
+
+    margin-top: 20px;
   }
 
+  .input-signIn {
+    border-radius: 0px;
+    border: none;
+    border-bottom: 1.3px solid #222;
+    background: none;
+    width: 100%;
+    margin-top: 18px;
+  }
+  
+  
+  .input-signIn:focus {
+    outline: 4px #acc8fb solid;
+    background-color: #fff;
+    border-bottom: 1.3px solid #3498db;
+  }
 
 
