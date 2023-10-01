@@ -1,13 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-
-    // function updateButtonLabel(logueado) {
-    //     if (logueado) {
-    //         longinbuttonlabel.textContent = "Cerrar sesión";
-    //     } else {
-    //         longinbuttonlabel.textContent = "Iniciar sesión";
-    //     }
-    // }
     const longinbuttonlabel = document.getElementById("longinbuttonlabel");
     const containerPopup = document.querySelector('.container-popup');
     const closeButtonX = document.getElementById("close-signIn");
@@ -112,37 +104,11 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     endSession();
 
-    // Verificar y actualizar la etiqueta del botón cuando la página carga
-    // const userlogueado = localStorage.getItem("logueado");
-    // updateButtonLabel(userlogueado === "true");
-
-    // Agrega una comprobación para ver si hay login previo
-    function Comprueba() {
-        var user = document.getElementById("usuario").value;
-        var pass = document.getElementById("password").value;
-        $.post("conexion.php", { usuario: user, password: pass }, function (data) {
-            if (data != "NO") {
-                $("#mensaje").html("<span class='verde'>Bienvenido " + data + "</span>");
-                sessionStorage.setItem('usuario', user);
-
-                $("#Noticias").removeClass("disabled").addClass("active");
-                $("#Rutas").removeClass("disabled").addClass("active");
-                $("#Inscribirse").removeClass("disabled").addClass("active");
-                $("#Listados").removeClass("disabled").addClass("active");
-
-                limpiarFormulario();
-                checkLoginPrev(); //llama a la funcion de verificar login
-            } else {
-                $("#mensaje").html("<span class='roja'>Usuario no válido</span>");
-            }
-        });
-    }
     //funcion para verificar login previo
     function checkLoginPrev() {
         const prevLog = localStorage.getItem("logueado");
 
         if (prevLog === "true") { // El usuario está logueado, ejecutar keepLog para mantener login
-            
             keepLog();
         }
     }
