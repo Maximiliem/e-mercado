@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function(){
        
             <button id="longinbuttonlabel" class="login-button" for="visible">Iniciar sesión</button>
         
-            <div class="container-popup message-triangle">
+            <div class="container-popup">
                 <label id="close-signIn" class="close-btn" title="close">X</label>
                 <div id="title-signIn"class="text">Iniciar sesión</div>
                 <form action="#">
