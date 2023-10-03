@@ -36,24 +36,7 @@ nav a {
 
 
 
-form .signup-link-login a {
-  color: #3498db;
-  text-decoration: none;
-}
 
-form .signup-link-login a:hover {
-  text-decoration: underline;
-}
-
-@keyframes barfill {
-  from {
-    border-bottom-width: 1px;
-  }
-
-  to {
-    border-bottom-width: 100%;
-  }
-}*/
 
 /*////////FIN BLOQE CSS POP UP LOG IN//////////// */
 
@@ -431,6 +414,10 @@ input:focus {
 }
 /* FINAL ESTILO FORM*/
 
+.text-muted{
+  text-align: center;
+}
+
 /* INICIO ESTILOS BUSCADOR PRODUCTOS */
 
 #search-container-producto {
@@ -494,7 +481,6 @@ input:focus {
   font-size: 3.3vh;
   /* letter-spacing:0.5vw; */
   /*la variante que se me ocurre es disminuir el espacio, para darle un toque diferente a la letra*/
-  color: rgb(20, 20, 20);
   font-weight: 510;
 }
 
@@ -509,9 +495,13 @@ input:focus {
   transform: scale(1.1);
   animation-duration: 1ms;
   transition: 0.4s;
-  background-color: rgba(231, 231, 231, 0.534);
 }
 /*FIN ESTILOS PRODUCT AUTOS*/
 
+/* estilo moon */
+
+.bi-moon{
+  color: white;
+}
 
 
