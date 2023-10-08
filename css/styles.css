@@ -504,4 +504,9 @@ input:focus {
   color: white;
 }
 
-
+/*ESTILOS PARA EL CARRITO DE COMPRAS*/
+.containerResume {
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  padding: 1.25rem;
+}
