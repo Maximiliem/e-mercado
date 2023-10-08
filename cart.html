@@ -30,7 +30,7 @@
             <a class="nav-link" href="categories.html">Categorías</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="sell.html">Vender</a>
+            <a class="nav-link" href="sell.html">Vender</a>
             <li class="nav-item">
               <a class="nav-link" id="botonCrearCuenta" href="login.html" onclick="openForm()">Crear cuenta</a>
             </li>
@@ -51,7 +51,23 @@
       <div id="containerArticulos" class= "container"> <!--Container de articulos-->
         <h4 class="mb-1"> Artículos </h4>
          <div id="Articulos">
-          <!-- Aca se cargaran los articulos mediante el DOM  -->
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Costo</th>
+                <th scope="col">Cantidad</th>
+                <th scope="col">Moneda</th>
+                <th scope="col">Subtotal</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Aca se cargaran los articulos mediante el DOM  -->
+          
+            </tbody>
+          </table>
+          
        </div>
      </div>
   <div id="containerResume"class="container mt-5">
