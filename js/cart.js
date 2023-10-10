@@ -31,10 +31,50 @@ document.addEventListener("DOMContentLoaded", () => {
             <td>${producto.unitCost * producto.count}</td>
           `;
 
+        
+
           tableBody.appendChild(row);
         });
 
         console.log(articles);
+
+        // Max add: un nuevo elemento tr y el contenido respectivo para hacer los controles gráficos de envío y dirección
+    function addGraphicsControls(){
+        const anotherRow = document.createElement('div');
+        // anotherRow.classList.add('form-check');
+    
+        anotherRow.innerHTML = `
+        <br>
+        <div>    
+            <h3>Tipo de envío</h3>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Premium 2 a 5 días (15%)
+                    </label>
+            </div>
+
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        Express 5 a 8 días (7%)
+                    </label>
+            </div>
+            
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
+                    <label class="form-check-label" for="flexRadioDefault3">
+                        Standard 12 a 15 días (5%)
+                    </label>
+            </div>
+        </div>
+
+        
+          `
+
+          tableBody.appendChild(anotherRow);
+    };
+    addGraphicsControls();
 
       } else {
         console.error("El carrito de compras está vacío.");
