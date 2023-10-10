@@ -38,14 +38,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
         console.log(articles);
 
-        // Max add: un nuevo elemento tr y el contenido respectivo para hacer los controles gráficos de envío y dirección
+        // Max add: contenido respectivo para hacer los controles gráficos de envío y dirección
     function addGraphicsControls(){
         const anotherRow = document.createElement('div');
-        // anotherRow.classList.add('form-check');
-    
         anotherRow.innerHTML = `
         <br>
-        <div>    
+        <!--FORMULARIO DE SELECCIÓN DE TIPO DE ENVÍO-->
+        <div class="form-container">    
             <h3>Tipo de envío</h3>
             <div class="form-check">
                 <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
@@ -69,7 +68,26 @@ document.addEventListener("DOMContentLoaded", () => {
             </div>
         </div>
 
-        
+        <br>
+        <!--INGRESO DE DATOS DE DIRECCIÓN, NÚMERO Y CALLE-->
+        <div class="shippingAddress">
+            <h3>Dirección de envío</h3>
+            <label class="label-calle">Calle</label>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" aria-label="Street name input" aria-describedby="inputGroup-sizing-default">
+            </div>
+
+            <label class="label-numero">Número</label>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" aria-label="Street number input" aria-describedby="inputGroup-sizing-default">
+            </div>
+
+            <label class="label-esquina">Esquina</label>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" aria-label="Corner street name input" aria-describedby="inputGroup-sizing-default">
+            </div>
+        </div>
+
           `
 
           tableBody.appendChild(anotherRow);
