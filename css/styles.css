@@ -344,7 +344,7 @@ body {
 }
 
 .form-check-label {
-
+  display: flex;
   margin-top: 14px;
 }
 
@@ -510,3 +510,4 @@ input:focus {
   flex: 1 1 auto;
   padding: 1.25rem;
 }
+

@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <td>${producto.unitCost}</td>
             <td><input type="text" id="cantidadInput_${producto.id}" value="${producto.count}" style="width: 50px; text-align: center"></td>
             <td>${producto.currency}</td>
-            <td>${producto.unitCost * producto.count}</td>
+            <td>${producto.unitCost}</td>
           `;
 
         
