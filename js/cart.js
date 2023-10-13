@@ -25,27 +25,47 @@ document.addEventListener("DOMContentLoaded", () => {
           row.innerHTML = `
             <th scope="row"><img width="50" src="${producto.image}" alt="Imagen del producto"></th>
             <td>${producto.name}</td>
-            <td>${producto.unitCost}</td>
-            <td><input type="text" id="cantidadInput_${producto.id}" value="${producto.count}" style="width: 50px; text-align: center"></td>
+            <td class="costo">${producto.unitCost}</td>
+            <td><input type="number" id="cantidadInput" value="${producto.count}" style="width: 50px; text-align: center" min="0"></td>
             <td>${producto.currency}</td>
-            <td>${producto.unitCost}</td>
+            <td class="subTotal">${producto.unitCost}</td>
           `;
-
-        
-
           tableBody.appendChild(row);
         });
 
-        console.log(articles);
+       // console.log(articles);
+
+
 
         // Max add: contenido respectivo para hacer los controles gráficos de envío y dirección
     function addGraphicsControls(){
         const anotherRow = document.createElement('div');
+        const tipoyDireccion=document.getElementById("tipoyDireccion");
         anotherRow.innerHTML = `
         <br>
+      <div class="row">
+
+        <!--INGRESO DE DATOS DE DIRECCIÓN, NÚMERO Y CALLE-->
+        <div class="shippingAddress col-5 mx-auto">
+            <h4>Dirección de envío</h4>
+            <label class="label-calle">Calle</label>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" aria-label="Street name input" aria-describedby="inputGroup-sizing-default">
+            </div>
+
+            <label class="label-numero">Número</label>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" aria-label="Street number input" aria-describedby="inputGroup-sizing-default">
+            </div>
+
+            <label class="label-esquina">Esquina</label>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" aria-label="Corner street name input" aria-describedby="inputGroup-sizing-default">
+            </div>
+        </div>
         <!--FORMULARIO DE SELECCIÓN DE TIPO DE ENVÍO-->
-        <div class="form-container">    
-            <h3>Tipo de envío</h3>
+        <div class="form-container col-6 mx-auto pt-5">    
+            <h4>Tipo de envío</h4>
             <div class="form-check">
                 <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
                     <label class="form-check-label" for="flexRadioDefault1">
@@ -68,29 +88,10 @@ document.addEventListener("DOMContentLoaded", () => {
             </div>
         </div>
 
-        <br>
-        <!--INGRESO DE DATOS DE DIRECCIÓN, NÚMERO Y CALLE-->
-        <div class="shippingAddress">
-            <h3>Dirección de envío</h3>
-            <label class="label-calle">Calle</label>
-            <div class="input-group mb-3">
-                <input type="text" class="form-control" aria-label="Street name input" aria-describedby="inputGroup-sizing-default">
-            </div>
-
-            <label class="label-numero">Número</label>
-            <div class="input-group mb-3">
-                <input type="text" class="form-control" aria-label="Street number input" aria-describedby="inputGroup-sizing-default">
-            </div>
-
-            <label class="label-esquina">Esquina</label>
-            <div class="input-group mb-3">
-                <input type="text" class="form-control" aria-label="Corner street name input" aria-describedby="inputGroup-sizing-default">
-            </div>
-        </div>
-
+      </div>
           `
 
-          tableBody.appendChild(anotherRow);
+          tipoyDireccion.appendChild(anotherRow);
     };
     addGraphicsControls();
 
