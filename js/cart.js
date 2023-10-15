@@ -39,6 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
           });
         });
 
+        // Función para actualizar subtotal en base al change de cantidad
         function actualizarPrecio(input) {
           const row = input.closest('tr');
           const subtotalElement = row.querySelector('.subTotal');
