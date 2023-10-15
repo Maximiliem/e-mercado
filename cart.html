@@ -17,12 +17,15 @@
 <body>
   <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark p-1"> <!--se deja nav fijo-->
     <div class="container">
+      <div id="p-3 mb-2 bg-light text-dark">
+        <button id="changeTheme" class="btn rounded-fill"> <i class="bi bi-sun"></i> </button><!--se crea para el modo oscuro-->
+      </div>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav w-100 justify-content-between">
+       <ul class="navbar-nav w-100 justify-content-between">
           <li class="nav-item">
             <a class="nav-link" href="index.html">Inicio</a>
           </li>
@@ -31,12 +34,13 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="sell.html">Vender</a>
-            <li class="nav-item">
-              <a class="nav-link" id="botonCrearCuenta" href="login.html" onclick="openForm()">Crear cuenta</a>
-            </li>
-            <li class="nav-item" id="login-nav">
-              <!-- Acá se pone desde el DOM el contenido del login pop up -->
-            </li>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="botonCrearCuenta" href="login.html" onclick="openForm()">Crear cuenta</a>
+          </li>
+          <li class="nav-item" id="login-nav">
+            <!-- Acá se pone desde el DOM el contenido del login pop up -->
+          </li>
         </ul>
       </div>
     </div>
@@ -67,7 +71,10 @@
             </tbody>
           </table>
           
-       </div>
+        </div>
+     </div>
+     <div id="tipoyDireccion">
+        <!--Aqui se insertan el espacio para la direccion y el tipo de envio-->
      </div>
   <div id="containerResume"class="container mt-5">
     <h4 class="mb-1"> Resumen del pedido </h4>
