@@ -35,12 +35,6 @@ nav a {
 }
 
 
-
-
-
-/*////////FIN BLOQE CSS POP UP LOG IN//////////// */
-
-
 .bd-placeholder-img {
   font-size: 1.125rem;
   text-anchor: middle;
@@ -76,6 +70,13 @@ nav a {
   }
 }
 
+/* Cambiar la imagen de fondo para Mobile */
+/* @media (max-width: 767px) {
+  .jumbotron {
+    background: url('../img/login.png'); 
+  }
+}
+ */
 .jumbotron p:last-child {
   margin-bottom: 0;
 }
@@ -346,7 +347,7 @@ body {
 }
 
 .form-check-label {
-  display: flex;
+
   margin-top: 14px;
 }
 
@@ -467,6 +468,8 @@ input:focus {
   text-align: center;
 }
 
+
+
 /* INICIO ESTILOS BUSCADOR PRODUCTOS */
 
 #search-container-producto {
@@ -488,25 +491,149 @@ input:focus {
 /* FIN ESTILOS BUSCADOR PRODUCTOS */
 
 /*INICIO ESTILO PRODUCT AUTO*/
-.imagenProductos {
-  width: 20vw;
-  float: left;
-  margin-right: 4%;
-}
 
 .containerProductos {
   display: flex;
   flex-direction: column;
 }
 
-.containerProductos h4 {
+.containerProductos h2 {
   text-align: center;
+  margin-top: 15px;
 }
 
-.lista-productos {
+.iconosSort {
+  justify-content: center;
+}
+
+.textoPrecioProducto {
+  margin-top: 14px;
+}
+
+#rangeFilterCountMin {
+  display: flex;
+  margin-top: 14px;
+}
+
+#rangeFilterCountMax {
+  display: flex;
+  margin-top: 14px;
+}
+
+
+
+/* query iconos sort para mobile */
+@media (max-width: 767px) {
+  
+
+  .row.container .col-md {
+    width: 100%;
+    margin-bottom: 8px; /* Ajusta el espaciado entre los elementos */
+  }
+
+  .row.container .btn-group {
+    width: 100%; /* botones ocupan el ancho completo */
+  }
+
+  
+}
+
+/* Desktop */
+@media (min-width: 768px) {
+  .divFiltro {
+    text-align: right; /* Alinea los botones a la derecha en modo desktop */
+  }
+
+  .textoPrecioProducto {
+    margin-top: 14px;
+    justify-content: right;
+  }
+
+  .iconosSort {
+    justify-content: flex-end !important; /* Centra los iconos horizontalmente */
+  }
+  
+}
+
+
+
+/* .imagenProductos {
+  width: 300px;
+  float: left;
+  margin-right: 4%;
+} */
+
+/* .producto {
+  margin-bottom: 20px; 
+} */
+
+.producto:hover {
+  transform: scale(1.1);
+  animation-duration: 1ms;
+  transition: 0.4s;
+}
+
+/* Ajusta el tamaño de la imagen */
+.imagenProductos {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Ajusta el espacio entre los elementos dentro de divTexto */
+.divTexto {
+  padding: 10px;
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  font-size: 2.4vh;
+  
+}
+
+/* querys para escritorio */
+@media (min-width: 768px) {
+  .divTexto {
+      display: flex;
+      /* flex-direction: row; */
+      justify-content: space-between;
+      align-items: right;
+  }
+
+  /* .divDescripcion,
+  .divVendidos {
+      width: 48%; 
+  } */
+}
+
+
+/* querys para ocultar descripción y cantidad vendidos en mobile */
+@media (max-width: 767px) {
+  .divDescripcion, 
+  .divVendidos {
+    display: none;
+  }
+
+  .divTexto {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /* margin-left: 30px; */
+  }
+}
+
+.divNombre {
+  font-size: 3.3vh;
+  /* letter-spacing:0.5vw; */
+  /*la variante que se me ocurre es disminuir el espacio, para darle un toque diferente a la letra*/
+  font-weight: 510;
+  /* margin-right: 10px; */
+}
+
+
+/* .lista-productos {
   text-align: justify;
   color: rgb(84, 84, 84);
-}
+} */
 
 .subtitulo4 {
   margin-top: 2%;
@@ -526,25 +653,10 @@ input:focus {
   font-weight: bold;
 }
 
-.divNombre {
-  font-size: 3.3vh;
-  /* letter-spacing:0.5vw; */
-  /*la variante que se me ocurre es disminuir el espacio, para darle un toque diferente a la letra*/
-  font-weight: 510;
-}
 
 
-.divTexto {
-  display: inline-flexbox;
-  text-align: right;
-  font-size: 2.4vh;
-}
 
-.producto:hover {
-  transform: scale(1.1);
-  animation-duration: 1ms;
-  transition: 0.4s;
-}
+
 /*FIN ESTILOS PRODUCT AUTOS*/
 
 /* estilo moon */
@@ -559,4 +671,3 @@ input:focus {
   flex: 1 1 auto;
   padding: 1.25rem;
 }
-
